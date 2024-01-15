@@ -1,0 +1,14 @@
+@props(['heading','text'])
+
+<div class="mb-12 mx-auto max-w-2xl text-center">
+    @isset($heading)
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            {{ $heading }}
+        </h2>
+    @endisset
+    @isset($text)
+        <p class="mt-2 text-lg leading-8 text-gray-600">
+            {{ $text  }}
+        </p>
+    @endisset
+</div>
