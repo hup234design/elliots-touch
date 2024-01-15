@@ -1,8 +1,7 @@
 @props(['title','heading','text'])
 
 @section('heading')
-    {{--@parent--}}
-    <section class="h-64 bg-gray-800 flex flex-col items-center justify-center space-y-4">
+    <section class="h-48 bg-gray-800 flex flex-col items-center justify-center space-y-4">
 
         @isset($title)
             <p class="font-bold text-white text-2xl">

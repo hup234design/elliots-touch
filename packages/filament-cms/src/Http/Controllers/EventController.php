@@ -15,7 +15,7 @@ class EventController extends Controller
 
         $events = Event::upcoming()->visible()
             ->orderBy('date', 'asc')
-            ->paginate(3);
+            ->paginate(10);
 
         return view('cms::events.index', compact('page','events'));
     }
@@ -35,7 +35,7 @@ class EventController extends Controller
             ->upcoming()
             ->visible()
             ->orderBy('date', 'asc')
-            ->paginate(3);
+            ->paginate(10);
 
         return view('cms::events.category', compact('category','events'));
     }

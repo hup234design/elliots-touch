@@ -1,20 +1,20 @@
 @props(['images'])
 
-<div class="flex gap-4">
+<div class="grid grid-cols-3 gap-8">
     @foreach($images as $image)
-        <div class="flex-1 aspect-w-1 aspect-h-1">
+        <div class="div aspect-video">
             @if ($image->hasCuration('thumbnail'))
                 <x-curator-curation
                     :media="$image"
                     curation="thumbnail"
-                    class="object-cover w-auto"
+                    class="object-cover w-full h-full"
                 />
             @else
                 <x-curator-glider
-                    class="object-cover w-auto"
+                    class="object-cover w-full h-full"
                     :media="$image"
-                    :width="400"
-                    :height="400"
+                    :width="640"
+                    :height="360"
                 />
             @endif
         </div>

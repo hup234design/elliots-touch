@@ -41,6 +41,6 @@ class ImagesBlock extends AbstractContentBlock
     public function render()
     {
         $images = Media::whereIn('id',$this->blockData['images'])->get();
-        return view('cms::livewire.content-blocks.images-block', compact('images'));
+        return view('cms::content-blocks.images-block', compact('images'));
     }
 }

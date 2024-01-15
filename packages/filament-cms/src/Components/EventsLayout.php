@@ -22,7 +22,10 @@ class EventsLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        $event_categories = EventCategory::withCount('events')->get();
+        $event_categories = EventCategory::withCount(['events' => function ($query) {
+            $query->visible();
+        }])->get();
+
         return view('cms::layouts.events', compact('event_categories'));
     }
 }

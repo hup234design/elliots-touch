@@ -35,10 +35,10 @@ class EnquiryForm extends Component implements HasForms
 
     public function resetQuiz()
     {
-        $this->x = rand(1,20);
-        $this->y = rand(1,20);
-
-        $this->question = "What is " . $this->x . " + " . $this->y . " ?";
+//        $this->x = rand(1,20);
+//        $this->y = rand(1,20);
+//
+//        $this->question = "What is " . $this->x . " + " . $this->y . " ?";
      }
 
     public function mount(): void
@@ -51,7 +51,8 @@ class EnquiryForm extends Component implements HasForms
             'email' => 'dave@hup234.me.uk',
             'telephone' => '07887477234',
             'subject' => 'Test Enquiry',
-            'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'quiz' => $this->answer
         ]);
     }
 

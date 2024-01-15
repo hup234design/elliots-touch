@@ -14,7 +14,7 @@ class TestimonialController extends Controller
 
         $testimonials = Testimonial::visible()
             ->orderBy('received_on', 'desc')
-            ->paginate(3);
+            ->paginate(10);
 
         return view('cms::testimonials.index', compact('page', 'testimonials'));
     }

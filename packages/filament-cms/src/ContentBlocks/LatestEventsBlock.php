@@ -19,6 +19,6 @@ class LatestEventsBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.latest-events-block');
+        return view('cms::content-blocks.latest-events-block');
     }
 }

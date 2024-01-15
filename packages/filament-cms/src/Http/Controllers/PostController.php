@@ -16,7 +16,7 @@ class PostController extends Controller
         $posts = Post::query()
             ->where('is_visible', true)
             ->orderBy('publish_at', 'desc')
-            ->paginate(3);
+            ->paginate(10);
 
         return view('cms::posts.index', compact('page', 'posts'));
     }
@@ -35,7 +35,7 @@ class PostController extends Controller
             ->posts()
             ->visible()
             ->orderBy('publish_at', 'desc')
-            ->paginate(3);
+            ->paginate(10);
 
         return view('cms::posts.category', compact('category','posts'));
     }

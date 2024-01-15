@@ -18,6 +18,6 @@ class ButtonsBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.buttons-block');
+        return view('cms::content-blocks.buttons-block');
     }
 }

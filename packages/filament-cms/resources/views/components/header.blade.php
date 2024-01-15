@@ -1,4 +1,4 @@
-<header class="bg-gray-300 min-h-40 space-y-8 flex flex-col justify-center items-center">
+<header class="bg-gray-300 min-h-40 py-4 space-y-4 flex flex-col justify-center items-center">
 
     <div class="text-center">
         <a href="{{ route('home') }}" class="font-extrabold text-4xl">
@@ -7,7 +7,7 @@
     </div>
 
     <nav class="">
-        <ul class="w-full h-16 flex justify-center">
+        <ul class="w-full h-16 flex items-center justify-center">
             @foreach( $menuLinks ?? [] as $link)
                 <li class="group px-6">
                     @if( $link['dropdown'] )

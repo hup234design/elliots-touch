@@ -13,7 +13,7 @@
 @section('heading')
 @show
 
-<main class="mt-20">
+<main class="mt-16">
 {{ $slot }}
 </main>
 

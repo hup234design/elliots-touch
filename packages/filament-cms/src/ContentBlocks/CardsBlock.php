@@ -18,6 +18,6 @@ class CardsBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.cards-block');
+        return view('cms::content-blocks.cards-block');
     }
 }

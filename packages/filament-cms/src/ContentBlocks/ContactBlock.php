@@ -18,6 +18,6 @@ class ContactBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.contact-block');
+        return view('cms::content-blocks.contact-block');
     }
 }

@@ -1,3 +1,3 @@
 <x-cms::content-blocks.wrapper>
-    <x-cms::media-object />
+    <x-cms::cta.default />
 </x-cms::content-blocks.wrapper>

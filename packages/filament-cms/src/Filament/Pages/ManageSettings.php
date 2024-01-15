@@ -41,6 +41,13 @@ class ManageSettings extends Page
             "secondary_header_menu_id" => null,
             "primary_footer_menu_id" => null,
             "secondary_footer_menu_id" => null,
+            "social_facebook" => null,
+            "social_twitter" => null,
+            "social_linkedin" => null,
+            "social_instagram" => null,
+            "social_pinterest" => null,
+            "social_youtube" => null,
+            "social_tiktok" => null,
         ];
 
         foreach ($requiredKeys as $key=>$value) {
@@ -135,6 +142,45 @@ class ManageSettings extends Page
                                 ->label('Secondary Footer Menu')
                                 ->helperText('This will only be used if configured in site theme'),
                         ]),
+                    Forms\Components\Tabs\Tab::make('Social Media URLs')
+                        ->schema([
+                            Forms\Components\TextInput::make('state.social_facebook')
+                                ->label('Facebook')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_twitter')
+                                ->label('Twitter')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_linkedin')
+                                ->label('LinkedIn')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_instagram')
+                                ->label('Instagram')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_pinterest')
+                                ->label('Pinterest')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_youtube')
+                                ->label('YouTube')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                            Forms\Components\TextInput::make('state.social_tiktok')
+                                ->label('TikTok')
+                                ->url()
+                                ->inlineLabel()
+                                ->maxWidth('2xl'),
+                        ])
+                    ,
                 ])
                 ->columnSpan(2)
         ];

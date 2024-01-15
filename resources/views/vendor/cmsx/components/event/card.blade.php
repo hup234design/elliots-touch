@@ -1,14 +1,14 @@
 @props([])
 
-<div class="aspect-video bg-gray-100 border-2 border-gray-400 flex items-center justify-center">
-    <span>event.card</span>
-</div>
+{{--<div class="aspect-video bg-gray-100 border-2 border-gray-400 flex items-center justify-center">--}}
+{{--    <span>event.card</span>--}}
+{{--</div>--}}
 
 {{--<div class="flex flex-col overflow-hidden rounded-lg shadow-lg">--}}
 {{--    <div class="flex-shrink-0">--}}
 {{--        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">--}}
 {{--    </div>--}}
-{{--    <div class="flex flex-1 flex-col justify-between bg-white p-6">--}}
+{{--    <div class="flex flex-1 flex-col justify-between bg-red-200 p-6">--}}
 {{--        <div class="flex-1">--}}
 {{--            <p class="text-sm font-medium text-indigo-600">--}}
 {{--                <a href="#" class="hover:underline">Article</a>--}}
@@ -36,5 +36,5 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+    </div>
+</div>

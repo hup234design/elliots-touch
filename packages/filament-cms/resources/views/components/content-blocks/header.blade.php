@@ -1,8 +1,8 @@
 @props(['heading','text'])
 
-<div class="mb-12 mx-auto max-w-2xl text-center">
+<div class="mb-20 mx-auto max-w-2xl text-center">
     @isset($heading)
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+        <h2 class="text-2xl font-bold tracking-tight  sm:text-5xl">
             {{ $heading }}
         </h2>
     @endisset

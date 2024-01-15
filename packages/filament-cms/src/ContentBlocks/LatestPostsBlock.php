@@ -19,6 +19,6 @@ class LatestPostsBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.latest-posts-block');
+        return view('cms::content-blocks.latest-posts-block');
     }
 }

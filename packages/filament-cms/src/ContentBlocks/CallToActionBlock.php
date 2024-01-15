@@ -21,6 +21,6 @@ class CallToActionBlock extends AbstractContentBlock
 
     public function render()
     {
-        return view('cms::livewire.content-blocks.call-to-action-block');
+        return view('cms::content-blocks.call-to-action-block');
     }
 }

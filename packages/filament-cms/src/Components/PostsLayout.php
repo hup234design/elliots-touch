@@ -22,7 +22,9 @@ class PostsLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        $post_categories = PostCategory::withCount('posts')->get();
+        $post_categories = PostCategory::withCount(['posts' => function ($query) {
+            $query->visible();
+        }])->get();
         return view('cms::layouts.posts', compact('post_categories'));
     }
 }

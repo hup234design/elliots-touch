@@ -9,17 +9,17 @@
 
     <div class="max-w-7xl mx-auto px-8">
         <div class="prose max-w-none">
-            <h1>{{ $page->title }}</h1>
-            @if($page->featured_image?->media )
-                @if ($page->featured_image->media->hasCuration( $page->featured_image->curation ?? "" ))
-                    <x-curator-curation :media="$page->featured_image->media" :curation="$page->featured_image->curation" class="mx-auto"/>
-                @else
-                    <x-curator-glider
-                        class="w-full"
-                        :media="$page->featured_image->media"
-                    />
-                @endif
-            @endif
+            <h1 class="mt-0">{{ $page->title }}</h1>
+{{--            @if($page->featured_image?->media )--}}
+{{--                @if ($page->featured_image->media->hasCuration( $page->featured_image->curation ?? "" ))--}}
+{{--                    <x-curator-curation :media="$page->featured_image->media" :curation="$page->featured_image->curation" class="mx-auto"/>--}}
+{{--                @else--}}
+{{--                    <x-curator-glider--}}
+{{--                        class="w-full"--}}
+{{--                        :media="$page->featured_image->media"--}}
+{{--                    />--}}
+{{--                @endif--}}
+{{--            @endif--}}
             @if( $page->content ?? null )
                 {!! tiptap_converter()->asHTML($page->content) !!}
             @endif
