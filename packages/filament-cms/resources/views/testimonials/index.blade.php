@@ -1,6 +1,6 @@
 <x-cms-app-layout>
 
-    <x-cms::page-heading heading="Testimonials" />
+    <x-cms::page-heading heading="Client Testimonials" />
 
     <div class="max-w-7xl mx-auto px-8">
         <div class="mt-16 space-y-12">
