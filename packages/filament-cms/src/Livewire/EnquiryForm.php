@@ -35,10 +35,10 @@ class EnquiryForm extends Component implements HasForms
 
     public function resetQuiz()
     {
-//        $this->x = rand(1,20);
-//        $this->y = rand(1,20);
-//
-//        $this->question = "What is " . $this->x . " + " . $this->y . " ?";
+        $this->x = rand(1,20);
+        $this->y = rand(1,20);
+
+        $this->question = "What is " . $this->x . " + " . $this->y . " ?";
      }
 
     public function mount(): void

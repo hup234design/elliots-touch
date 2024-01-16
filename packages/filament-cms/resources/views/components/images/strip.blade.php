@@ -1,11 +1,11 @@
-@props(['mediaObject' => []])
+@props(['images' => []])
 
 <div class="max-w-7xl mx-auto">
     <div class="flex gap-4">
-        @for($x=1; $x<=5; $x++)
+        @foreach($images as $image)
             <div class="flex-1 aspect-square">
-                <x-cms::media-image-renderer />
+                <x-cms::media-image-renderer :media="$image" />
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>

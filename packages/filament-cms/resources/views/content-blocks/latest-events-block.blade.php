@@ -7,15 +7,24 @@
     @endif
     <div class="mx-auto grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
 
-        @for($x=1; $x<=3; $x++)
+        @foreach($events as $event)
             <div>
-                <div class="flex h-96 mb-6">
-                    <x-cms::media-image-renderer />
+                <div class="relative h-64 mb-6">
+                    <x-cms::media-image-renderer :media="$event->featured_image?->media" />
                 </div>
-                <span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>
-                <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">Lorem ipsum dolor</h2>
-                <p class="mb-4 text-lg text-gray-500 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a class="flex items-center text-lg font-bold text-gray-500 hover:text-gray-700" href="#">
+                <span class="text-xs font-bold text-gray-500">
+                    {{ $event->date->format('Y-m-d') }}
+                </span>
+                <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">
+                    {{ $event->title }}
+                </h2>
+                <p class="mb-4 text-gray-500">
+                    {{ nl2br($event->summary) }}
+                </p>
+                <a
+                    class="flex items-center text-lg font-bold text-gray-500 hover:text-gray-700"
+                    href="{{ route('events.event', $event->slug) }}"
+                >
                     <span>Read more</span>
                     <span>
                         <svg class="ml-1 w-5 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -24,7 +33,7 @@
                     </span>
                 </a>
             </div>
-        @endfor
+        @endforeach
 
     </div>
 </x-cms::content-blocks.wrapper>
