@@ -1,5 +1,6 @@
 @props(['mediaObject' => []])
 
+@isset($mediaObject['media_id'])
     <div class="grid grid-cols-4 gap-8">
         <div class="">
             <div class="w-full aspect-square">
@@ -22,4 +23,5 @@
                 {!! tiptap_converter()->asHTML($mediaObject['content']) !!}
             @endif
         </div>
-</div>
+    </div>
+@endisset
