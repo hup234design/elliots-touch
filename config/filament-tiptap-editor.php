@@ -65,7 +65,9 @@ return [
     | See https://filamentphp.com/docs/3.x/panels/installation#file-upload
     |
     */
-    'accepted_file_types' => ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml', 'application/pdf'],
+    //'accepted_file_types' => ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml', 'application/pdf'],
+    'accepted_file_types' => ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'],
+
     'disk' => 'public',
     'directory' => 'images',
     'visibility' => 'public',

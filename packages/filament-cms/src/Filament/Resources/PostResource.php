@@ -3,19 +3,26 @@
 namespace Hup234design\FilamentCms\Filament\Resources;
 
 use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Awcodes\Curator\Components\Tables\CuratorColumn;
 use FilamentTiptapEditor\Enums\TiptapOutput;
 use FilamentTiptapEditor\TiptapEditor;
 use Hup234design\FilamentCms\Filament\Forms\Components\MediablePreview;
+use Hup234design\FilamentCms\Filament\Forms\SidebarLayout;
 use Hup234design\FilamentCms\Filament\Resources\PostResource\Pages;
 use Hup234design\FilamentCms\Filament\Resources\PostResource\RelationManagers;
+use Hup234design\FilamentCms\Models\Page;
 use Hup234design\FilamentCms\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Hup234design\FilamentCms\Models\PostCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use RalphJSmit\Filament\Components\Forms\Timestamps;
+use RalphJSmit\Filament\SEO\SEO;
 
 class PostResource extends Resource
 {
@@ -32,23 +39,25 @@ class PostResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Forms\Components\Section::make()
+        return $form->schema([
+            SidebarLayout::make([
+
+                Forms\Components\Group::make()
                     ->schema([
-                        Forms\Components\TextInput::make('title')->label('Title'),
-                        Forms\Components\TextInput::make('slug')->label('Slug'),
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                        Forms\Components\TextInput::make('slug')
+                            ->required()
+                            ->unique(Post::class, 'slug', ignoreRecord: true)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn ($state, Forms\Set $set) => $set('slug', Str::slug($state))),
                     ])
+                    ->columnSpanFull()
                     ->columns(2),
-                Forms\Components\Section::make()
-                    ->schema([
-                        Forms\Components\DateTimePicker::make('publish_at')
-                            ->required(),
-                        Forms\Components\Toggle::make('is_visible')
-                            ->inline(false)
-                            ->default(true),
-                    ])
-                    ->columns(2),
+
                 Forms\Components\Textarea::make('summary')
                     ->rows(3)
                     ->required()
@@ -66,6 +75,7 @@ class PostResource extends Resource
                             CuratorPicker::make('media_id')
                                 ->label('Image')
                                 ->live()
+                                ->required()
                                 ->afterStateUpdated(function (Forms\Set $set, $state) {
                                     $set('curation', null);
                                 }),
@@ -90,17 +100,44 @@ class PostResource extends Resource
                     ->output(TiptapOutput::Json)
                     ->maxContentWidth('full')
                     ->columnSpanFull()
-            ]);
+                ],[
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\Select::make('post_category_id')
+                            ->label('Category')
+                            ->options(PostCategory::all()->pluck('title','id')),
+                        Forms\Components\DateTimePicker::make('publish_at')
+                            ->required(),
+                        Forms\Components\Toggle::make('is_visible')
+                            ->inline(false)
+                            ->default(true),
+                    ]),
+
+                Forms\Components\Section::make('SEO')
+                    ->collapsible()
+                    ->schema([
+                        SEO::make(['title','description']),
+                    ]),
+                Forms\Components\Section::make()
+                    ->schema([
+                        ...Timestamps::make(),
+                    ]),
+            ])
+        ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('publish_at', 'desc')
             ->columns([
+                CuratorColumn::make('featured_image.media_id')
+                    ->label(false)
+                    ->size(64),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+//                Tables\Columns\TextColumn::make('slug')
+//                    ->searchable(),
                 Tables\Columns\TextColumn::make('post_category.title')
                     ->numeric()
                     ->sortable(),
