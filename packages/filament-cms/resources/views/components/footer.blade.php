@@ -7,11 +7,13 @@
     </div>
 
     <ul class="flex items-center font-medium text-sm gap-12">
-        @foreach($pageLinks as $slug=>$title)
-            <li><a href="{{ route('page', $slug) }}">{{ $title }}</a></li>
+        @foreach( $menuLinks ?? [] as $link)
+            <li class="group px-6">
+                <a href="{{ $link['href'] }}" target="{{ $link['target'] }}" class="h-16 font-bold text-lg rounded flex items-center  hover:text-red-700">
+                    {{ $link['label'] }}
+                </a>
+            </li>
         @endforeach
-        <li><a href="{{ route('events.index') }}">Events</a></li>
-        <li><a href="{{ route('posts.index') }}">Posts</a></li>
     </ul>
 
     <p class="text-sm">

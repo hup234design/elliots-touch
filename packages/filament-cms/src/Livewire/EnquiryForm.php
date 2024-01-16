@@ -46,14 +46,7 @@ class EnquiryForm extends Component implements HasForms
         $this->submitted = Cache::has('enquiry-form-submitted');
         $this->resetQuiz();
         $this->extraFields = new HoneypotData();
-        $this->form->fill([
-            'name' => 'Dave Walker',
-            'email' => 'dave@hup234.me.uk',
-            'telephone' => '07887477234',
-            'subject' => 'Test Enquiry',
-            'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'quiz' => $this->answer
-        ]);
+        $this->form->fill([]);
     }
 
     public function form(Form $form): Form

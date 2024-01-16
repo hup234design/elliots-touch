@@ -24,10 +24,17 @@ class AppLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        $menu = Navigation::fromHandle('header');
-        $menuLinks = NavigationMenuItems::transform($menu['items'] ?? []);
+        $headerMenu = Navigation::fromHandle('header');
+        $headerLinks = NavigationMenuItems::transform($headerMenu['items'] ?? []);
 
-        $pageLinks = Page::where('is_home',false)->visible()->pluck('title','slug');
-        return view('cms::layouts.app', compact('pageLinks','menuLinks'));
+        $footerMenu = Navigation::fromHandle('footer');
+        $footerLinks = NavigationMenuItems::transform($footerMenu['items'] ?? []);
+
+        $menus = [
+            'header' => $headerLinks,
+            'footer' => $footerLinks,
+        ];
+
+        return view('cms::layouts.app', compact('menus'));
     }
 }

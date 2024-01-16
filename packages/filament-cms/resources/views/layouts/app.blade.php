@@ -8,7 +8,7 @@
 </head>
 <body class="antialiased">
 
-<x-cms::header :pageLinks="$pageLinks"  :menuLinks="$menuLinks"/>
+<x-cms::header :menuLinks="$menus['header']"/>
 
 @section('heading')
 @show
@@ -17,6 +17,6 @@
 {{ $slot }}
 </main>
 
-<x-cms::footer :pageLinks="$pageLinks"/>
+<x-cms::footer :menuLinks="$menus['footer']"/>
 </body>
 </html>
