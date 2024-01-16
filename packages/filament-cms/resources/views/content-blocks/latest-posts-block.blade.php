@@ -11,7 +11,7 @@
             <div class="p-6 bg-gray-50 rounded-lg">
                 <div class="relative h-40 mb-6">
                     <span class="absolute top-0 right-0 mt-4 mr-4 inline-block text-xs px-2 py-1 bg-gray-50 rounded uppercase text-gray-500 font-semibold">Development</span>
-                    <img class="w-full h-full object-cover rounded-lg" src="https://shuffle.dev/plain-assets/images/gray-500-horizontal.png" alt="">
+                    <x-cms::media-image-renderer />
                 </div>
                 <span class="inline-block text-xs font-bold text-gray-500">10 jun 2022 19:40</span>
                 <h2 class="mb-2 text-2xl font-bold font-heading">Lorem ipsum dolor sit amet consectutar</h2>

@@ -10,7 +10,7 @@
         @for($x=1; $x<=3; $x++)
             <div>
                 <div class="flex h-96 mb-6">
-                    <img class="w-full h-full object-cover rounded-lg" src="https://shuffle.dev/plain-assets/images/gray-500-horizontal.png" alt="">
+                    <x-cms::media-image-renderer />
                 </div>
                 <span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>
                 <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">Lorem ipsum dolor</h2>

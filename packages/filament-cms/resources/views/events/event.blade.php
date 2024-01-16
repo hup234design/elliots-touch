@@ -5,10 +5,24 @@
         :heading="$event->title"
     />
 
-    <div class="py-24 bg-blue-900 text-center text-xl font-bold text-white">
-        <span>
-            EVENT
-        </span>
+    <div class="prose max-w-none">
+        <h1>{{ $event->title }}</h1>
+
+        @if($event->featured_image?->media )
+
+            @if ($event->featured_image->media->hasCuration( $event->featured_image->curation ?? "" ))
+                <x-curator-curation :media="$post->featured_image->media" :curation="$post->featured_image->curation" class="mx-auto"/>
+            @else
+                <x-curator-glider
+                    class="w-full"
+                    :media="$event->featured_image->media"
+                />
+            @endif
+        @endif
+
+        @if( $event->content )
+            {!! tiptap_converter()->asHTML($event->content) !!}
+        @endif
     </div>
 
 </x-cms-events-layout>
