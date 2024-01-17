@@ -9,7 +9,7 @@
 
         @foreach($posts as $post)
             <div class="p-6 bg-gray-50 rounded-lg">
-                <div class="relative h-48 mb-6">
+                <div class="relative h-64 mb-6">
                     @if($post->post_category_id)
                         <a class="absolute top-0 right-0 mt-4 mr-4 inline-block text-xs px-2 py-1 bg-gray-50 rounded uppercase text-gray-500 font-semibold">
                             {{ $post->post_category->title }}
@@ -17,9 +17,9 @@
                     @endif
                         <x-cms-media-image-renderer
                             :media="$post->featured_image?->media_id"
-                            :curation="$post->featured_image?->media_curation"
+                            :curation="$post->featured_image?->curation"
                             preset="thumbnail"
-                            imgClass="w-full h-full rounded-lg"
+                            imgClass="w-full h-full rounded-lg object-cover"
                         />
                 </div>
                 <span class="inline-block text-xs font-bold text-gray-500">

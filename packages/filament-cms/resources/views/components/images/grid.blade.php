@@ -6,6 +6,7 @@
                 <div class="w-full lg:w-1/3 p-4">
                     <x-cms-media-image-renderer
                         :media="$image"
+                        curation="thumbnail"
                         preset="thumbnail"
                         imgClass="w-full rounded-lg object-cover"
                     />

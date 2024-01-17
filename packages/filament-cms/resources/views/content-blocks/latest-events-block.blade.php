@@ -14,7 +14,7 @@
                         :media="$event->featured_image?->media"
                         :curation="$event->featured_image?->media_curation"
                         preset="thumbnail"
-                        imgClass="w-full h-full rounded-lg"
+                        imgClass="w-full h-full rounded-lg object-cover"
                     />
                 </div>
                 <span class="text-xs font-bold text-gray-500">
