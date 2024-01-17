@@ -9,15 +9,11 @@
         <h1>{{ $event->title }}</h1>
 
         @if($event->featured_image?->media )
-
-            @if ($event->featured_image->media->hasCuration( $event->featured_image->curation ?? "" ))
-                <x-curator-curation :media="$post->featured_image->media" :curation="$post->featured_image->curation" class="mx-auto"/>
-            @else
-                <x-curator-glider
-                    class="w-full"
-                    :media="$event->featured_image->media"
-                />
-            @endif
+            <x-cms-media-image-renderer
+                :media="$event->featured_image?->media"
+                :curation="$event->featured_image?->curation"
+                imgClass="w-full"
+            />
         @endif
 
         @if( $event->content )

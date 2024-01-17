@@ -1,14 +1,32 @@
 @props(['mediaObject' => []])
 
-    <div class="grid grid-cols-4 gap-8">
+@isset($mediaObject['media_id'])
+    <div class="grid gap-8 md:grid-cols-4" >
         <div class="">
             <div class="w-full aspect-square">
-                <img class="w-full h-full object-cover rounded-lg" src="https://shuffle.dev/plain-assets/images/gray-500-square.png" alt="">
+                <x-cms-media-image-renderer
+                    :media="$mediaObject['media_id']"
+                    :curation="$mediaObject['media_curation']"
+                    preset="thumbnail"
+                    imgClass="w-full h-full object-cover rounded-2xl"
+                />
             </div>
         </div>
-        <div class="col-span-3">
-            <span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>
-            <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">Lorem ipsum dolor sit</h2>
-            <p class="mb-4 text-lg text-gray-500 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan aliquet orci.</p>
+        <div class="md:col-span-3">
+            {{--<span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>--}}
+            @if( $mediaObject['title'] )
+                <h2 class="mb-2 text-2xl font-bold font-heading">
+                    {{ $mediaObject['title'] }}
+                </h2>
+            @endif
+            @if( $mediaObject['content'] )
+                <h3 class="mb-2 text-xl font-semibold font-heading">
+                    {{ $mediaObject['subtitle'] }}
+                </h3>
+            @endif
+            @if( $mediaObject['content'] )
+                {!! tiptap_converter()->asHTML($mediaObject['content']) !!}
+            @endif
         </div>
-</div>
+    </div>
+@endisset

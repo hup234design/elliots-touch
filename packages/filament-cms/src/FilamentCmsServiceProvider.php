@@ -4,7 +4,9 @@ namespace Hup234design\FilamentCms;
 
 use Hup234design\FilamentCms\Components\AppLayout;
 use Hup234design\FilamentCms\Components\EventsLayout;
+use Hup234design\FilamentCms\Components\MediaImageRenderer;
 use Hup234design\FilamentCms\Components\PostsLayout;
+use Hup234design\FilamentCms\Commands\CreateMediaCurations;
 use Hup234design\FilamentCms\ContentBlocks\ButtonsBlock;
 use Hup234design\FilamentCms\ContentBlocks\CallToActionBlock;
 use Hup234design\FilamentCms\ContentBlocks\CardsBlock;
@@ -12,7 +14,6 @@ use Hup234design\FilamentCms\ContentBlocks\ContactBlock;
 use Hup234design\FilamentCms\ContentBlocks\ImagesBlock;
 use Hup234design\FilamentCms\ContentBlocks\MediaObjectListBlock;
 use Hup234design\FilamentCms\ContentBlocks\MediaObjectBlock;
-use Hup234design\FilamentCms\ContentBlocks\ImageStripBlock;
 use Hup234design\FilamentCms\ContentBlocks\LatestEventsBlock;
 use Hup234design\FilamentCms\ContentBlocks\LatestPostsBlock;
 use Hup234design\FilamentCms\Livewire\EnquiryForm;
@@ -28,7 +29,8 @@ class FilamentCmsServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name(static::$name)
-            ->hasViewComponents('cms', AppLayout::class, PostsLayout::class, EventsLayout::class)
+            ->hasViewComponents('cms',
+                AppLayout::class, PostsLayout::class, EventsLayout::class, MediaImageRenderer::class)
             ->hasViews()
             ->hasMigrations([
                 'create_mediables_table',
@@ -43,7 +45,8 @@ class FilamentCmsServiceProvider extends PackageServiceProvider
                 'create_testimonials_table',
             ])
             ->hasConfigFile(['cms'])
-            ->hasRoute('web');
+            ->hasRoute('web')
+            ->hasCommand(CreateMediaCurations::class);
     }
 
     public function packageRegistered(): void

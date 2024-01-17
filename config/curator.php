@@ -39,7 +39,10 @@ return [
     'is_limited_to_directory' => false,
     'is_tenant_aware' => true,
     'max_size' => 5000,
-    'model' => \Awcodes\Curator\Models\Media::class,
+
+    //'model' => \Awcodes\Curator\Models\Media::class,
+    'model' => \Hup234design\FilamentCms\Models\CustomMedia::class,
+
     'min_size' => 0,
     'path_generator' => null,
     'resources' => [

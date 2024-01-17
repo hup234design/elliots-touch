@@ -10,7 +10,12 @@
         @foreach($events as $event)
             <div>
                 <div class="relative h-64 mb-6">
-                    <x-cms::media-image-renderer :media="$event->featured_image?->media" />
+                    <x-cms-media-image-renderer
+                        :media="$event->featured_image?->media"
+                        :curation="$event->featured_image?->media_curation"
+                        preset="thumbnail"
+                        imgClass="w-full h-full rounded-lg"
+                    />
                 </div>
                 <span class="text-xs font-bold text-gray-500">
                     {{ $event->date->format('Y-m-d') }}

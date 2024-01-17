@@ -15,7 +15,12 @@
                             {{ $post->post_category->title }}
                         </a>
                     @endif
-                    <x-cms::media-image-renderer :media="$post->featured_image?->media" />
+                        <x-cms-media-image-renderer
+                            :media="$post->featured_image?->media_id"
+                            :curation="$post->featured_image?->media_curation"
+                            preset="thumbnail"
+                            imgClass="w-full h-full rounded-lg"
+                        />
                 </div>
                 <span class="inline-block text-xs font-bold text-gray-500">
                     {{ $post->publish_at->format('Y-m-d H:i') }}

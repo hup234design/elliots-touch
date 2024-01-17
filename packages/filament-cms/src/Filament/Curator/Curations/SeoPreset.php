@@ -28,7 +28,7 @@ class SeoPreset extends CurationPreset
 
     public function getFormat(): string
     {
-        return 'png';
+        return 'jpg';
     }
 
     public function getQuality(): int

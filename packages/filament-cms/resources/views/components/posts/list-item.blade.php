@@ -3,7 +3,12 @@
 <div class="grid md:grid-cols-3 gap-8">
     <div class="">
         <div class="w-full aspect-square">
-            <x-cms::media-image-renderer :media="$post->featured_image?->media" imgClass="w-full h-full object-cover rounded-lg" />
+            <x-cms-media-image-renderer
+                :media="$post->featured_image?->media"
+                :curation="$post->featured_image?->media_curation"
+                preset="thumbnail"
+                imgClass="w-full h-full object-cover rounded-lg"
+            />
         </div>
     </div>
     <div class="col-span-2">
