@@ -1,7 +1,7 @@
 @if($media)
 
     @if( $curation && $media->hasCuration($curation) )
-        <x-curator-curation :media="$media" :curation="$curation" class="$imgClass" />
+        <x-curator-curation :media="$media" :curation="$curation" :class="$imgClass" />
     @else
         @if( $preset )
             <x-curator-glider

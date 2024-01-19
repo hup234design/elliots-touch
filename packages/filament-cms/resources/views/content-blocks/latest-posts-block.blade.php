@@ -1,4 +1,5 @@
 <x-cms::content-blocks.wrapper>
+
     @if($blockData['header'])
         <x-cms::content-blocks.header
             :heading="$blockData['header_title']"
@@ -15,12 +16,12 @@
                             {{ $post->post_category->title }}
                         </a>
                     @endif
-                        <x-cms-media-image-renderer
-                            :media="$post->featured_image?->media_id"
-                            :curation="$post->featured_image?->curation"
-                            preset="thumbnail"
-                            imgClass="w-full h-full rounded-lg object-cover"
-                        />
+                    <x-cms-media-image-renderer
+                        :media="$post->featured_image?->media_id"
+                        :curation="$post->featured_image?->curation"
+                        preset="thumbnail"
+                        imgClass="w-full h-full rounded-lg object-cover"
+                    />
                 </div>
                 <span class="inline-block text-xs font-bold text-gray-500">
                     {{ $post->publish_at->format('Y-m-d H:i') }}
