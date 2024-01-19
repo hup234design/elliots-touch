@@ -26,7 +26,7 @@
                 <span class="inline-block text-xs font-bold text-gray-500">
                     {{ $post->publish_at->format('Y-m-d H:i') }}
                 </span>
-                <h2 class="mb-2 text-2xl font-bold font-heading">
+                <h2 class="mb-2 text-2xl font-bold">
                     {{ $post->title }}
                 </h2>
                 <p class="mb-4 text-gray-500">

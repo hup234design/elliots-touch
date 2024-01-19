@@ -15,7 +15,7 @@
         <span class="text-xs font-bold text-gray-500">
             {{ $post->publish_at->format('d-m-Y') }}
         </span>
-        <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">
+        <h2 class="mt-2 mb-2 text-3xl font-bold">
             {{ $post->title }}
         </h2>
         @if( $post->summary)

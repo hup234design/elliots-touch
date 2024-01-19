@@ -15,12 +15,12 @@
         <div class="md:col-span-3">
             {{--<span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>--}}
             @if( $mediaObject['title'] )
-                <h2 class="mb-2 text-2xl font-bold font-heading">
+                <h2 class="mb-2 text-2xl font-bold">
                     {{ $mediaObject['title'] }}
                 </h2>
             @endif
             @if( $mediaObject['content'] )
-                <h3 class="mb-2 text-xl font-semibold font-heading">
+                <h3 class="mb-2 text-xl font-semibold">
                     {{ $mediaObject['subtitle'] }}
                 </h3>
             @endif

@@ -4,7 +4,7 @@
     <div class="relative container px-4 pb-32 mx-auto">
         <div class="max-w-xl lg:max-w-3xl mx-auto text-center mb-12 lg:mb-20">
             <span class="text-xs font-semibold text-gray-50 uppercase">New Feature</span>
-            <h2 class="mt-2 mb-4 text-3xl leading-tight md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight text-white font-bold font-heading">The latest version of this excellent product is waiting to deploy.</h2>
+            <h2 class="mt-2 mb-4 text-3xl leading-tight md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight text-white font-bold">The latest version of this excellent product is waiting to deploy.</h2>
             <p class="mb-8 text-base leading-relaxed lg:text-xl lg:leading-relaxed text-gray-50">A short message that will bring your customers into the world of your imagination. And will allow them to become more familiar with your brand.</p>
             <a class="inline-block px-5 py-3 text-sm bg-white hover:bg-gray-50 text-gray-500 font-semibold border border-white rounded transition duration-200" href="#">Try Demo</a>
         </div>
@@ -18,7 +18,7 @@
                 <circle cx="24" cy="24" r="23.5" stroke="currentColor"></circle>
               </svg>
             </span>
-                        <h3 class="mb-3 text-2xl font-bold font-heading">Spectacular team plan</h3>
+                        <h3 class="mb-3 text-2xl font-bold">Spectacular team plan</h3>
                         <p class="text-lg text-gray-400 leading-loose">Failry assigning daily tasks to your employees</p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <circle cx="24" cy="24" r="23.5" stroke="currentColor"></circle>
               </svg>
             </span>
-                        <h3 class="mb-3 text-2xl font-bold font-heading">Sharable showcase</h3>
+                        <h3 class="mb-3 text-2xl font-bold">Sharable showcase</h3>
                         <p class="text-lg text-gray-400 leading-loose">Team members will be up to date on the project</p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <circle cx="24" cy="24" r="23.5" stroke="currentColor"></circle>
               </svg>
             </span>
-                        <h3 class="mb-3 text-2xl font-bold font-heading">Generate new messages</h3>
+                        <h3 class="mb-3 text-2xl font-bold">Generate new messages</h3>
                         <p class="text-lg text-gray-400 leading-loose">More interesting writings for your customers</p>
                     </div>
                 </div>

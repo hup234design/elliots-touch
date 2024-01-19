@@ -15,7 +15,7 @@
         <span class="text-xs font-bold text-gray-500">
             {{ $event->date->format('d/m/Y') }}
         </span>
-        <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">
+        <h2 class="mt-2 mb-2 text-3xl font-bold">
             {{ $event->title }}
         </h2>
         <p class="mb-4 text-lg text-gray-500 leading-loose">

@@ -12,6 +12,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>{{ config('app.name') }}</title>
+    <meta name="csrf_token" value="{{ csrf_token() }}"/>
+    @googlefonts
+    @googlefonts('gloria-hallelujah')
     @vite('resources/css/app.css')
 </head>
 <body class="antialiased">

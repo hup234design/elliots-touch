@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -9,6 +11,10 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans:    ['Inter', ...defaultTheme.fontFamily.sans],
+                heading: ['"Gloria Hallelujah"', ...defaultTheme.fontFamily.sans],
+            },
             colors: {
                 brand: {
                     skyblue:     '#24bff8',
