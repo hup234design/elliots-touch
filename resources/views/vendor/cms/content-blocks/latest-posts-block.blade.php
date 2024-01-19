@@ -23,7 +23,7 @@
                     />
                 </div>
                 <div class="absolute top-0 left-0 ml-6 mt-6">
-                    <div class="absolute h-full w-full border-2 border-white m-3 bg-white/40"></div>
+                    <div class="absolute h-full w-full border-2 border-white m-2 bg-white/40"></div>
                     <div class="relative text-white bg-brand-crimson leading-none text-center p-4">
                         <p class="text-2xl font-extrabold">{{ $post->publish_at->format('d') }}</p>
                         <p class="mt-1 text-xs uppercase font-extrabold">{{ $post->publish_at->format('F') }}</p>
@@ -38,7 +38,7 @@
                         {{ $post->post_category->title }}
                     </a>
                     @endif
-                    <h3 class="text-2xl mb-4 font-bold">{{ $post->title }}</h3>
+                    <h3 class="font-serif text-2xl mb-4 font-bold">{{ $post->title }}</h3>
                     <p class="line-clamp-4">{{ nl2br($post->summary) }}</p>
                     <div class="mt-8 h-20 flex items-center">
                         <a
