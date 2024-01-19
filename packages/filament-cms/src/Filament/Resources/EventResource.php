@@ -105,6 +105,10 @@ class EventResource extends Resource
                             ->options(EventCategory::all()->pluck('title','id')),
                         Forms\Components\DatePicker::make('date')
                             ->required(),
+                        Forms\Components\TimePicker::make('start_time')
+                            ->visible(fn(Forms\Get $get) => $get('date')),
+                        Forms\Components\DatePicker::make('end_time')
+                            ->visible(fn(Forms\Get $get) => $get('start_time')),
                         Forms\Components\Toggle::make('is_visible')
                             ->inline(false)
                             ->default(true),
@@ -126,6 +130,7 @@ class EventResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('date', 'desc')
             ->columns([
                 CuratorColumn::make('featured_image.media_id')
                     ->label(false)
