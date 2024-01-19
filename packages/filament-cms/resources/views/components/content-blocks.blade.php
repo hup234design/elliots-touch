@@ -1,9 +1,14 @@
 @props(['blocks' => []])
 
 @if( count($blocks) > 0 )
-<div class="mt-20">
-@foreach($blocks as $block)
-    @livewire($block['type'], ['blockData' => $block['data']])
-@endforeach
-</div>
+    <div class="mt-20">
+        @foreach($blocks as $block)
+            <x-cms::content-blocks.wrapper
+                :style="$block['data']['block_style'] ?? 'default'"
+                :width="$block['data']['block_width'] ?? 'default'"
+            >
+                @livewire($block['type'], ['blockData' => $block['data']])
+            </x-cms::content-blocks.wrapper>
+        @endforeach
+    </div>
 @endif

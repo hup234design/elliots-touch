@@ -1,3 +1,3 @@
-<x-cms::content-blocks.wrapper>
+<div>
     <x-cms::cta.default />
-</x-cms::content-blocks.wrapper>
+</div>

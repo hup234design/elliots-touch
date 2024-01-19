@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
 
     <div class="relative isolate bg-white">
         <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
@@ -94,4 +94,4 @@
 {{--        </div>--}}
 {{--    </div>--}}
 
-</x-cms::content-blocks.wrapper>
+</div>

@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
     <x-cms::content-blocks.header
         heading="CARDS BLOCK"
         text="Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua."
@@ -9,4 +9,4 @@
         <x-cms::cards.default />
     </div>
 
-</x-cms::content-blocks.wrapper>
+</div>

@@ -14,6 +14,7 @@ use Livewire\Component;
 
 class MediaObjectBlock extends AbstractContentBlock
 {
+    protected static bool $includeHeader = false;
 
     protected static function makeFilamentSchema(): array|\Closure
     {

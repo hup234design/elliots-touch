@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class CardsBlock extends AbstractContentBlock
 {
+    protected static bool $includeHeader = false;
 
     protected static function makeFilamentSchema(): array|\Closure
     {

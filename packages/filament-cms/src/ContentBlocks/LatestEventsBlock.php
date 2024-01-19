@@ -10,11 +10,10 @@ use Livewire\Component;
 
 class LatestEventsBlock extends AbstractContentBlock
 {
-
     protected static function makeFilamentSchema(): array|\Closure
     {
         return [
-            ContentBlockHeader::make()
+            //
         ];
     }
 

@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
     @if($blockData['header'])
         <x-cms::content-blocks.header
             :heading="$blockData['header_title']"
@@ -15,4 +15,4 @@
             @break
     @endswitch
 
-</x-cms::content-blocks.wrapper>
+</div>

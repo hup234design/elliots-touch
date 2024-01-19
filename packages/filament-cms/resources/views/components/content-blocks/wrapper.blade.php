@@ -1,12 +1,19 @@
-@props(['nopadding' => false, 'fullwidth' => false])
+@props(['style' => 'default', 'width' => 'default'])
 
-<section class="odd:bg-gray-100">
-<div
+<section
     @class([
-        "max-w-7xl mx-auto px-8" => ! $fullwidth,
-        "py-20" => ! $nopadding
+        "py-20",
+        "bg-gray-50" => $style == 'light',
+        "bg-blue-600" => $style == 'brand',
+        "bg-gray-800" => $style == 'dark',
     ])
 >
-    {{  $slot }}
-</div>
+    <div
+        @class([
+            "px-8",
+            "max-w-7xl mx-auto" => $width == 'default',
+        ])
+    >
+        {{  $slot }}
+    </div>
 </section>

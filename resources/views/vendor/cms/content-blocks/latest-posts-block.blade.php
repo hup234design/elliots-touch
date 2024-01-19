@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
 
     {{--    <div class="h-[635px]">--}}
     {{--        <iframe width="100%" height="100%" src="{{ url('themes/givest/blog-posts.php') }}"></iframe>--}}
@@ -53,4 +53,4 @@
         @endforeach
     </div>
 
-</x-cms::content-blocks.wrapper>
+</div>

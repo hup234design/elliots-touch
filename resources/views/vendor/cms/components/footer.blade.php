@@ -1,4 +1,4 @@
-<footer class="bg-brand-dark-blue py-16 flex flex-col justify-center items-center mt-16 space-y-8">
+<footer class="bg-brand-dark-blue py-16 flex flex-col justify-center items-center space-y-8">
 
     <div class="text-center">
         <a href="{{ route('home') }}" class="font-bold text-xl text-white">

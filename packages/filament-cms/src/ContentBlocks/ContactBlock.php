@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class ContactBlock extends AbstractContentBlock
 {
+    protected static bool $includeHeader = false;
 
     protected static function makeFilamentSchema(): array|\Closure
     {

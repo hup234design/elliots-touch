@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
 
     @if($blockData['header'])
         <x-cms::content-blocks.header
@@ -44,4 +44,4 @@
         @endforeach
 
     </div>
-</x-cms::content-blocks.wrapper>
+</div>

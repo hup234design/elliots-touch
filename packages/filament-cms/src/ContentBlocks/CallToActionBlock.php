@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class CallToActionBlock extends AbstractContentBlock
 {
+    protected static bool $includeHeader = false;
+
     protected static function blockLabel(): string
     {
         return "Call To Action";

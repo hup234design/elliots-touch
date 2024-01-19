@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
     <div class="flex items-center justify-center">
         <x-cms::button />
     </div>
@@ -7,4 +7,4 @@
         <x-cms::button />
         <x-cms::button />
     </div>
-</x-cms::content-blocks.wrapper>
+</div>

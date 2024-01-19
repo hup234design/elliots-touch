@@ -36,6 +36,7 @@ class ContentBlocksBuilder
                 MediaObjectBlock::make(),
                 MediaObjectListBlock::make(),
                 ContactBlock::make(),
+                ...config('cms.content_blocks', [])
             ]);
     }
 }

@@ -1,4 +1,4 @@
-<x-cms::content-blocks.wrapper>
+<div>
     @if($blockData['header'] ?? null)
         <x-cms::content-blocks.header
             :heading="$blockData['header_title']"
@@ -10,4 +10,4 @@
             <x-cms::media-object :mediaObject="$mediaObject"/>
         @endforeach
     </div>
-</x-cms::content-blocks.wrapper>
+</div>

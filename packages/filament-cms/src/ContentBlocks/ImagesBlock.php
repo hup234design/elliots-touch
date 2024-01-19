@@ -13,11 +13,9 @@ use Livewire\Component;
 
 class ImagesBlock extends AbstractContentBlock
 {
-
     protected static function makeFilamentSchema(): array|\Closure
     {
         return [
-            ContentBlockHeader::make(),
             Radio::make('format')
                 ->label('Display Images As')
                 ->inline()
