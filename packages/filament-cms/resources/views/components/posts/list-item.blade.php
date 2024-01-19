@@ -13,7 +13,7 @@
     </div>
     <div class="col-span-2">
         <span class="text-xs font-bold text-gray-500">
-            {{ $post->publish_at->format('Y-m-d') }}
+            {{ $post->publish_at->format('d-m-Y') }}
         </span>
         <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">
             {{ $post->title }}

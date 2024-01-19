@@ -12,9 +12,15 @@
         </div>
     </div>
     <div class="col-span-2">
-        <span class="text-xs font-bold text-gray-500">10 jun 2022 19:40</span>
-        <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">Lorem ipsum dolor sit</h2>
-        <p class="mb-4 text-lg text-gray-500 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa nibh, pulvinar vitae aliquet nec, accumsan aliquet orci.</p>
+        <span class="text-xs font-bold text-gray-500">
+            {{ $event->date->format('d/m/Y') }}
+        </span>
+        <h2 class="mt-2 mb-2 text-3xl font-bold font-heading">
+            {{ $event->title }}
+        </h2>
+        <p class="mb-4 text-lg text-gray-500 leading-loose">
+            {{ nl2br($event->summary) }}
+        </p>
         <a
             class="flex items-center text-lg font-bold text-gray-500 hover:text-gray-700"
             href="{{ route('events.event', $event->slug) }}"
