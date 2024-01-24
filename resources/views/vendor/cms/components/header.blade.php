@@ -43,6 +43,56 @@
                     @endif
                 </li>
             @endforeach
+
+                @if(cms_setting('social_facebook'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_facebook') }}" target="_blank">
+                            <x-si-facebook class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_twitter'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_twitter') }}" target="_blank">
+                            <x-si-twitter class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_linkedin'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_linkedin') }}" target="_blank">
+                            <x-si-linkedin class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_instagram'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_instagram') }}" target="_blank">
+                            <x-si-instagram class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_pinterest'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_pinterest') }}" target="_blank">
+                            <x-si-pinterest class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_youtube'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_youtube') }}" target="_blank">
+                            <x-si-youtube class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
+                @if(cms_setting('social_tiktok'))
+                    <li class="pl-6">
+                        <a href="{{ cms_setting('social_tiktok') }}" target="_blank">
+                            <x-si-tiktok class="w-8 h-8 text-brand-dark-blue "/>
+                        </a>
+                    </li>
+                @endif
         </ul>
     </nav>
 
