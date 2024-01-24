@@ -14,9 +14,9 @@ class SidebarLayout
 
     public static function make(array|Closure $mainComponents, array|Closure $sidebarComponents): Grid
     {
-        return Grid::make(['md' => 3])->schema([
-            Grid::make()->schema($mainComponents)->columnSpan(['md' => 2]),
-            Grid::make()->schema($sidebarComponents)->columnSpan(['md' => 1]),
+        return Grid::make(['lg' => 3])->schema([
+            Grid::make()->schema($mainComponents)->columnSpan(['lg' => 2]),
+            Grid::make()->schema($sidebarComponents)->columnSpan(['lg' => 1]),
         ]);
     }
 }

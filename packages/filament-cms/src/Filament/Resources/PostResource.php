@@ -7,6 +7,7 @@ use Awcodes\Curator\Components\Tables\CuratorColumn;
 use FilamentTiptapEditor\Enums\TiptapOutput;
 use FilamentTiptapEditor\TiptapEditor;
 use Hup234design\FilamentCms\Filament\Forms\Components\MediablePreview;
+use Hup234design\FilamentCms\Filament\Forms\Fields\FeaturedImage;
 use Hup234design\FilamentCms\Filament\Forms\SidebarLayout;
 use Hup234design\FilamentCms\Filament\Resources\PostResource\Pages;
 use Hup234design\FilamentCms\Filament\Resources\PostResource\RelationManagers;
@@ -39,6 +40,76 @@ class PostResource extends Resource
 
     public static function form(Form $form): Form
     {
+        return $form->schema([
+            SidebarLayout::make([
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                        Forms\Components\TextInput::make('slug')
+                            ->required()
+                            ->unique(Post::class, 'slug', ignoreRecord: true)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn ($state, Forms\Set $set) => $set('slug', Str::slug($state))),
+                    ])
+                    ->columnSpanFull()
+                    ->columns(2),
+                Forms\Components\Tabs::make('Post')
+                    ->columnSpanFull()
+                    ->tabs([
+                        Forms\Components\Tabs\Tab::make('Content')
+                            ->schema([
+                                Forms\Components\Textarea::make('summary')
+                                    ->rows(3)
+                                    ->required()
+                                    ->columnSpanFull(),
+                                TiptapEditor::make('content')
+                                    ->profile('cms')
+                                    ->output(TiptapOutput::Json)
+                                    ->maxContentWidth('full')
+                                    ->columnSpanFull()
+                            ]),
+                        Forms\Components\Tabs\Tab::make('Featured Image')
+                            ->schema([
+                                FeaturedImage::make()
+                            ]),
+                        Forms\Components\Tabs\Tab::make('Header')
+                            ->schema([
+                                // ...
+                            ]),
+                        Forms\Components\Tabs\Tab::make('SEO')
+                            ->schema([
+                                SEO::make(['title','description']),
+                            ]),
+                    ])
+            ],[
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\Select::make('post_category_id')
+                            ->label('Category')
+                            ->options(PostCategory::all()->pluck('title','id')),
+                        Forms\Components\DateTimePicker::make('publish_at')
+                            ->required(),
+                        Forms\Components\Toggle::make('is_visible')
+                            ->inline(false)
+                            ->default(true),
+                    ]),
+
+//                Forms\Components\Section::make('SEO')
+//                    ->collapsible()
+//                    ->schema([
+//                        SEO::make(['title','description']),
+//                    ]),
+                Forms\Components\Section::make()
+                    ->schema([
+                        ...Timestamps::make(),
+                    ]),
+            ])
+        ]);
+
         return $form->schema([
             SidebarLayout::make([
 

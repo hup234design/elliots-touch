@@ -8,12 +8,12 @@ use Hup234design\FilamentCms\Filament\Forms\Components\MediablePreview;
 
 class FeaturedImage
 {
-    public static function make(): Forms\Components\Section
+    public static function make(): Forms\Components\Group
     {
-        return Forms\Components\Section::make('Featured Image')
+        return Forms\Components\Group::make()
             ->relationship('featured_image')
-            ->collapsible()
-            ->collapsed()
+//            ->collapsible()
+//            ->collapsed()
             ->columns(4)
             ->schema([
                 Forms\Components\Group::make([
@@ -22,7 +22,6 @@ class FeaturedImage
                     CuratorPicker::make('media_id')
                         ->label('Image')
                         ->live()
-                        ->required()
                         ->afterStateUpdated(function (Forms\Set $set, $state) {
                             $set('curation', null);
                         }),
