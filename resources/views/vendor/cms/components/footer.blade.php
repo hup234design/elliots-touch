@@ -16,6 +16,16 @@
         @endforeach
     </ul>
 
+    <ul class="flex items-center font-medium text-sm gap-12">
+        <li><x-si-facebook class="w-8 h-8 text-white "/></li>
+        <li><x-si-twitter class="w-8 h-8 text-white "/></li>
+        <li><x-si-linkedin class="w-8 h-8 text-white "/></li>
+        <li><x-si-instagram class="w-8 h-8 text-white "/></li>
+        <li><x-si-pinterest class="w-8 h-8 text-white "/></li>
+        <li><x-si-youtube class="w-8 h-8 text-white "/></li>
+        <li><x-si-tiktok class="w-8 h-8 text-white "/></li>
+    </ul>
+
     <p class="text-sm text-white">
         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
     </p>
