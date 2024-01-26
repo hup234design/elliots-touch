@@ -1,13 +1,13 @@
 <footer class="bg-gray-100 py-16 flex flex-col justify-center items-center space-y-12">
 
-    <div class="text-center">
-        <a href="{{ route('home') }}" class="font-bold text-xl text-white">
-            <img src="{{ asset('images/logo-transparent.png') }}" alt="{{ config('app.name') }}" class="mx-auto w-auto h-20
-            ">
-        </a>
+{{--    <div class="text-center">--}}
+{{--        <a href="{{ route('home') }}" class="font-bold text-xl text-white">--}}
+{{--            <img src="{{ asset('images/logo-transparent.png') }}" alt="{{ config('app.name') }}" class="mx-auto w-auto h-20--}}
+{{--            ">--}}
+{{--        </a>--}}
 
-        <p class="uppercase font-semibold text-base mt-4 text-brand-crimson">keeping energy flowing and little hearts beating</p>
-    </div>
+{{--        <p class="uppercase font-semibold text-base mt-4 text-brand-crimson">keeping energy flowing and little hearts beating</p>--}}
+{{--    </div>--}}
 
     <ul class="flex items-center font-medium text-sm gap-12">
         @foreach( $menuLinks ?? [] as $link)
@@ -77,7 +77,8 @@
     </ul>
     @endif
 
-    <p class="text-base text-brand-gray-800">
-        &copy; {{ date('Y') }} Elliots Touch. Charity Number: 1094446
-    </p>
+{{--    <p class="text-base text-brand-gray-800">--}}
+{{--        &copy; {{ date('Y') }} Elliots Touch. Charity Number: 1094446--}}
+{{--    </p>--}}
+
 </footer>

@@ -16,7 +16,7 @@
     @googlefonts
     @googlefonts('gloria-hallelujah')
     @vite(['resources/css/app.css','resources/js/app.js'])
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+{{--    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>--}}
     @livewireStyles
 </head>
 <body class="antialiased text-gray-800">
