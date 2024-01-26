@@ -1,11 +1,11 @@
 
 
 
-<header class="py-4 space-y-4 flex flex-col justify-center items-center">
+<header class="py-8 space-y-8 flex flex-col justify-center items-center">
 
     <div class="text-center">
         <a href="{{ route('home') }}" class="w-3/4 lg:w-auto mx-auto">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-3/4 h-auto lg:w-auto lg:h-24">
+            <img src="{{ asset('images/logo-transparent.png') }}" alt="Logo" class="w-3/4 h-auto lg:w-auto lg:h-28">
         </a>
     </div>
 

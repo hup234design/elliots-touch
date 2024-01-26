@@ -7,7 +7,7 @@
     @endif
     <div class="mx-auto grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
         @foreach($events as $event)
-            <div class="relative group bg-gray-50">
+            <div class="relative group bg-gray-50 flex flex-col bg-white pb-8">
                 <div class="aspect-video  overflow-hidden">
                     <x-cms-media-image-renderer
                         :media="$event->featured_image?->media"
@@ -22,20 +22,17 @@
                         <p class="text-sm font-extrabold">{{ $event->date->format('l jS F') }}</p>
                     </div>
                 </div>
-                <div class="p-8">
-{{--                    <div class="bg-gray-50 text-brand-skyblue px-4 py-2 mb-4 font-extrabold">--}}
-{{--                        {{ $event->date->format('l jS F') }}--}}
-{{--                    </div>--}}
-                    <h3 class="font-serif text-2xl mb-4 font-bold">{{ $event->title }}</h3>
+                <div class="flex-1 p-8">
+                    <h3 class="text-2xl mb-4 font-bold">{{ $event->title }}</h3>
                     <p class="line-clamp-4">{{ nl2br($event->summary) }}</p>
-                    <div class="mt-12 ">
-                        <a
-                            href="{{ route('events.event', $event->slug) }}"
-                            class="bg-brand-skyblue rounded-xl px-4 py-2 text-white font-semibold hover:bg-brand-blue transition-all duration-300"
-                        >
-                            Read More &rarr;
-                        </a>
-                    </div>
+                </div>
+                <div class="px-8">
+                    <a
+                        href="{{ route('events.event', $event->slug) }}"
+                        class="bg-brand-skyblue rounded-xl px-4 py-2 text-white font-semibold hover:bg-brand-blue transition-all duration-300"
+                    >
+                        Read More &rarr;
+                    </a>
                 </div>
             </div>
 {{--            <div>--}}

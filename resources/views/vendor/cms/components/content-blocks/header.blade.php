@@ -2,7 +2,7 @@
 
 <div class="mb-20 mx-auto max-w-5xl text-center">
     @isset($heading)
-        <h2 class="font-heading text-3xl font-semibold sm:text-5xl uppercase">
+        <h2 class="font-heading text-3xl font-semibold sm:text-5xl uppercase text-brand-dark-blue">
             {{ $heading }}
         </h2>
     @endisset

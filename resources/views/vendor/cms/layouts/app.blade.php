@@ -16,8 +16,9 @@
     @googlefonts
     @googlefonts('gloria-hallelujah')
     @vite('resources/css/app.css')
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
-<body class="antialiased">
+<body class="antialiased text-gray-800">
 
 <x-cms::header :menuLinks="$menus['header']"/>
 

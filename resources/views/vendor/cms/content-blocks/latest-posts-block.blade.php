@@ -38,8 +38,10 @@
                         {{ $post->post_category->title }}
                     </a>
                     @endif
-                    <h3 class="font-serif text-2xl mb-4 font-bold">{{ $post->title }}</h3>
-                    <p class="line-clamp-4">{{ nl2br($post->summary) }}</p>
+                    <h3 class="text-2xl mb-4 font-bold">{{ $post->title }}</h3>
+                    <div class="min-h-24">
+                        <p class="line-clamp-4">{{ nl2br($post->summary) }}</p>
+                    </div>
                     <div class="mt-8 h-20 flex items-center">
                         <a
                             href="{{ route('posts.post', $post->slug) }}"

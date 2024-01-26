@@ -1,23 +1,25 @@
 <div>
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
+    <div class="grid gap-16 md:grid-cols-2 ">
         @foreach( $ideas as $idea )
-            <div class="relative bg-gray-800 border p-4">
-                @if($idea->featured_image?->media )
-                    <div class="absolute inset-0">
-                    <x-cms-media-image-renderer
-                        :media="$idea->featured_image?->media"
-                        :curation="$idea->featured_image?->curation"
-                        imgClass="w-full h-full object-cover object-center opacity-50"
-                    />
-                    </div>
-                @endif
-                <div class="relative prose">
-                    <h3 class="break-words text-white">{{ $idea->title }}</h3>
-                    @if( $idea->content ?? null )
-                        <div class="font-semibold leading-tight  text-white">
-                        {!! tiptap_converter()->asText($idea->content) !!}
-                        </div>
+            <div class="flex items-center gap-8">
+                <div class="w-[164px] h-[164px] flex-grow-0">
+                    @if($idea->featured_image?->media )
+                        <x-cms-media-image-renderer
+                            :media="$idea->featured_image?->media"
+                            :curation="$idea->featured_image?->curation"
+                            imgClass="w-full h-full object-cover object-center rounded-full"
+                        />
                     @endif
+                </div>
+                <div class="flex-1">
+                    <div class="relative prose">
+                        <h3 class="break-words">{{ $idea->title }}</h3>
+                        @if( $idea->content ?? null )
+                            <div class="leading-tight">
+                                {!! tiptap_converter()->asText($idea->content) !!}
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         @endforeach

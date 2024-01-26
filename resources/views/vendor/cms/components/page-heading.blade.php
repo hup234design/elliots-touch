@@ -1,8 +1,7 @@
 @props(['title','heading','text'])
 
 @section('heading')
-    <section class="h-48 bg-brand-skyblue flex flex-col items-center justify-center space-y-4">
-
+    <section class="h-48 bg-brand-skyblue flex flex-col items-center justify-center space-y-8">
         @isset($title)
             <p class="font-bold text-white text-2xl">
                 {{ $title }}
@@ -20,5 +19,9 @@
                 </p>
             </div>
         @endisset
+
+            <a type="button" class="bg-white rounded-xl border-gray-400 px-8 py-2" href="https://cafdonate.cafonline.org/donatesteps.aspx?beneficiarycampaignid=3595" target="_blank">
+                <span class="text-xl">DONATE NOW</span>
+            </a>
     </section>
 @endsection

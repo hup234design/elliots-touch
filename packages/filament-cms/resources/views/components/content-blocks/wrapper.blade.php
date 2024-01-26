@@ -2,7 +2,7 @@
 
 <section
     @class([
-        "py-20",
+        "py-24",
         "bg-gray-50" => $style == 'light',
         "bg-blue-600" => $style == 'brand',
         "bg-gray-800" => $style == 'dark',
