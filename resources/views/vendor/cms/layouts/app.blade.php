@@ -15,8 +15,9 @@
     <meta name="csrf_token" value="{{ csrf_token() }}"/>
     @googlefonts
     @googlefonts('gloria-hallelujah')
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    @livewireStyles
 </head>
 <body class="antialiased text-gray-800">
 
@@ -30,5 +31,6 @@
 </main>
 
 <x-cms::footer :menuLinks="$menus['footer']"/>
+@livewireScripts
 </body>
 </html>

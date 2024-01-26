@@ -28,17 +28,109 @@
 {{--    </section>--}}
 
 
+{{--        <div class="relative max-w-7xl mx-auto">--}}
+{{--        <div class="my-3" x-data="{ activeSlide: 1, slides: [1, 2, 3] }">--}}
+{{--            <div class="relative">--}}
+{{--                <!-- Slides -->--}}
+{{--                <div x-show="activeSlide === 1">--}}
+{{--                    <div class="h-64 bg-red-900 w-full"></div>--}}
+{{--                </div>--}}
+{{--                <div x-show="activeSlide === 2">--}}
+{{--                    <img src="http://elliotstouch.hup234design.co.uk/storage/media/elliot.jpg" class="w-full h-auto" />--}}
+{{--                </div>--}}
+{{--                <div x-show="activeSlide === 3">--}}
+{{--                    <div class="h-64 bg-green-900 w-full"></div>--}}
+{{--                </div>--}}
+{{--                <!-- Prev/Next arrow buttons -->--}}
+{{--                <div class="box flex flex-space-between flex-middle">--}}
+{{--                    <button class="b-0 unrounded btn-icon bg-color-transparent cursor-pointer" x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">--}}
+{{--                        <x-heroicon-s-chevron-left class="w-16 h-16 text-black" />--}}
+{{--                    </button>--}}
+{{--                    <button class="b-0 unrounded btn-icon bg-color-transparent cursor-pointer" x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">--}}
+{{--                        <x-heroicon-s-chevron-right class="w-16 h-16 text-black" />--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <!-- Indicator buttons -->--}}
+{{--            <div class="flex flex-center px-3">--}}
+{{--                <template x-for="slide in slides" :key="slide">--}}
+{{--                    <button style="width: 2rem; height: 2rem" class="rounded-full b-thin mx-1 cursor-pointer" :class="{--}}
+{{--        'bg-red-900': activeSlide === slide,--}}
+{{--        ' bg-gray-200': activeSlide !== slide--}}
+{{--      }" x-on:click="activeSlide = slide"></button>--}}
+{{--                </template>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        </div>--}}
+
     <div class="bg-brand-crimson">
-        <div class="relative max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="border-x-8 border-white">
-                <img src="http://elliotstouch.hup234design.co.uk/storage/media/elliot.jpg" class="w-full h-auto" />
+                    <div class="glide">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">
+                                    <div class="w-full h-[640px]">
+                                        <img src="http://elliotstouch.hup234design.co.uk/storage/media/elliot.jpg" class="w-full h-full object-cover object-center" />
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="w-full h-[640px]">
+                                        <img src="http://elliotstouch.hup234design.co.uk/storage/media/elliots-touch-at-gosh.jpg" />
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="w-full h-[640px]">
+                                        <img src="http://elliotstouch.hup234design.co.uk/storage/media/silent-disco.jpg" class="w-full h-full object-cover object-center" />
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="w-full h-[640px]">
+                                        <img src="http://elliotstouch.hup234design.co.uk/storage/media/brompton-pic.jpg" class="w-full h-full object-cover object-center" />
+                                    </div>
+                                </li>
+                                <li class="glide__slide">
+                                    <div class="w-full h-[640px]">
+                                        <img src="http://elliotstouch.hup234design.co.uk/storage/media/donation-cheque.jpg" class="w-full h-full object-cover object-center" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        {{--            <div data-glide-el="controls">--}}
+                        {{--                <button data-glide-dir="<<">Start</button>--}}
+                        {{--                <button data-glide-dir=">>">End</button>--}}
+                        {{--            </div>--}}
+                        <div class="glide__bullets" data-glide-el="controls[nav]" class="isolate">
+                            <button class="glide__bullet h-4 w-4" data-glide-dir="=0"></button>
+                            <button class="glide__bullet h-4 w-4" data-glide-dir="=1"></button>
+                            <button class="glide__bullet h-4 w-4" data-glide-dir="=2"></button>
+                            <button class="glide__bullet h-4 w-4" data-glide-dir="=3"></button>
+                            <button class="glide__bullet h-4 w-4" data-glide-dir="=4"></button>
+                        </div>
+
+{{--                            <div data-glide-el="controls" class="isolate">--}}
+{{--                                <div class="absolute inset-y-0 w-20 top-0 left-0 -ml-20 flex flex-col items-center justify-center">--}}
+{{--                                    <button data-glide-dir="<<">--}}
+{{--                                        <x-heroicon-s-chevron-left class="w-16 h-16 text-white" />--}}
+{{--                                    </button>--}}
+{{--                                </div>--}}
+{{--                                <div class="absolute inset-y-0 w-20 top-0 right-0 -mr-20 flex flex-col items-center justify-center">--}}
+{{--                                    <button  class="relative"  data-glide-dir=">>">--}}
+{{--                                        <x-heroicon-s-chevron-right class="w-16 h-16 text-white" />--}}
+{{--                                    </button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+                    </div>
+
+
+{{--                <img src="http://elliotstouch.hup234design.co.uk/storage/media/elliot.jpg" class="w-full h-auto" />--}}
             </div>
-            <div class="absolute inset-y-0 w-20 top-0 left-0 -ml-20 flex flex-col items-center justify-center">
-                <x-heroicon-s-chevron-left class="w-16 h-16 text-white" />
-            </div>
-            <div class="absolute inset-y-0 w-20 top-0 right-0 -mr-20 flex flex-col items-center justify-center">
-                <x-heroicon-s-chevron-right class="w-16 h-16 text-white" />
-            </div>
+{{--            <div class="absolute inset-y-0 w-20 top-0 left-0 -ml-20 flex flex-col items-center justify-center">--}}
+{{--                <x-heroicon-s-chevron-left class="w-16 h-16 text-white" />--}}
+{{--            </div>--}}
+{{--            <div class="absolute inset-y-0 w-20 top-0 right-0 -mr-20 flex flex-col items-center justify-center">--}}
+{{--                <x-heroicon-s-chevron-right class="w-16 h-16 text-white" />--}}
+{{--            </div>--}}
         </div>
     </div>
 

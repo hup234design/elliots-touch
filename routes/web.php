@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+\Livewire\Livewire::setScriptRoute(function ($handle) {
+    return Route::get(env('LIVEWIRE_SCRIPT_ROUTE', '/livewire/livewire.js'), $handle);
+});
+
+\Livewire\Livewire::setUpdateRoute(function ($handle) {
+    return Route::post(env('LIVEWIRE_UPDATE_ROUTE', '/livewire/update'), $handle);
+});
 //Route::get('/', function () {
 //    return view('welcome');
 //});
