@@ -74,7 +74,7 @@ $crops = $getCrops();
             <div class="h-full w-full">
                 <img
                     wire:ignore
-                    src="{{ asset($getMedia()->path) }}"
+                    src="{{ asset($getMedia()->url) }}"
                     id="media-image-cropper-{{ $getMedia()->id }}"
                     wire:key="media-image-cropper-{{ $getMedia()->id }}"
                     class="block max-w-full"
