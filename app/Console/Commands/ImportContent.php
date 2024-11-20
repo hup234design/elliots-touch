@@ -72,6 +72,8 @@ class ImportContent extends Command
             DB::table('media')->truncate();
 
             DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+            $this->importMedia();
         } else {
             throw new \Exception("Unsupported database connection: $connection");
         }
