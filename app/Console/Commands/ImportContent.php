@@ -38,26 +38,43 @@ class ImportContent extends Command
      */
     public function handle()
     {
-        ray()->clearAll();
+        $connection = DB::getDriverName(); // Get the database driver
 
-        // Disable foreign key checks
-        DB::statement('PRAGMA foreign_keys = OFF');
-        // Truncate the tables
-        DB::table('pages')->truncate();
-        DB::table('posts')->truncate();
-        DB::table('events')->truncate();
-        DB::table('team_members')->truncate();
-        DB::table('fundraising_ideas')->truncate();
-        DB::table('projects')->truncate();
-        DB::table('help_options')->truncate();
+        if ($connection === 'sqlite') {
+            // SQLite-specific logic
+            DB::statement('PRAGMA foreign_keys = OFF');
+            DB::table('pages')->truncate();
+            DB::table('posts')->truncate();
+            DB::table('events')->truncate();
+            DB::table('team_members')->truncate();
+            DB::table('fundraising_ideas')->truncate();
+            DB::table('projects')->truncate();
+            DB::table('help_options')->truncate();
 
-        DB::table('mediables')->truncate();
-//
-//        Media::query()->delete();
-//        DB::table('media')->truncate();
+            DB::table('mediables')->truncate();
+            Media::query()->delete();
+            DB::table('media')->truncate();
 
-        // Re-enable foreign key checks
-        DB::statement('PRAGMA foreign_keys = ON');
+            DB::statement('PRAGMA foreign_keys = ON');
+        } elseif ($connection === 'mysql') {
+            // MySQL-specific logic
+            DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+            DB::table('pages')->truncate();
+            DB::table('posts')->truncate();
+            DB::table('events')->truncate();
+            DB::table('team_members')->truncate();
+            DB::table('fundraising_ideas')->truncate();
+            DB::table('projects')->truncate();
+            DB::table('help_options')->truncate();
+
+            DB::table('mediables')->truncate();
+            Media::query()->delete();
+            DB::table('media')->truncate();
+
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        } else {
+            throw new \Exception("Unsupported database connection: $connection");
+        }
 
 //        $this->importMedia();
         $this->importPages();
@@ -151,8 +168,6 @@ class ImportContent extends Command
         foreach ($data as $item) {
             if( ! $item['is_home'] ) {
 
-                ray($item['content']);
-
                 $content = [];
                 if( $sections = $item['content'] ) {
                     foreach ($sections['content'] ?? [] as $idx=>$section) {
@@ -164,7 +179,7 @@ class ImportContent extends Command
                                         "media_ids" => $section['attrs']['data']['images']
                                     ]
                                 ];
-                                ray($idx);
+
                                 unset($item['content']['content'][$idx]);
                                 // Reindex the array to reset keys
                                 $item['content']['content'] = array_values($item['content']['content']);
@@ -173,18 +188,12 @@ class ImportContent extends Command
                     }
                 }
 
-                ray($item['content']);
-
-                ray(tiptap_converter()->asHTML($item['content']));
-
                 $content[] = [
                     "type" => "editor_block",
                     "data" => [
                         "content" => tiptap_converter()->asHTML($item['content'])
                     ]
                 ];
-
-                ray($content);
 
                 Page::create([
                     'id' => $item['id'],
