@@ -13,9 +13,6 @@ class ListPages extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('Edit Home Page')
-                ->icon('heroicon-m-home')
-                ->url('/admin/manage-home-page'),
             Actions\CreateAction::make()
                 ->icon('heroicon-s-plus')
         ];

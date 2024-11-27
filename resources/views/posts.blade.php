@@ -1,8 +1,10 @@
 <x-posts-layout>
 
+    @section('title', $settings->posts_page_title)
+{{--    @section('subtitle', $settings->posts_page_introduction)--}}
+
         <div class="">
-            <h1>{{ $settings->title }}</h1>
-            {!! $settings->introduction !!}
+            {!! $settings->posts_page_introduction !!}
             <div class="space-y-8">
             @foreach($posts as $post)
                 <div class="prose max-w-none">

@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use App\Models\Pages\Page;
 use App\Services\MenuCacheService;
-use App\Settings\GeneralSettings;
+use App\Settings\SiteSettings;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -25,11 +25,11 @@ class AppLayout extends Component
         $menus = MenuCacheService::getCachedMenus();
 
         $headerMenu = [];
-        if( $menu = $menus->where('id', app(GeneralSettings::class)->header_primary_menu)->first() ) {
+        if( $menu = $menus->where('id', app(SiteSettings::class)->header_primary_menu)->first() ) {
             $headerMenu = $menu['items'];
         }
         $footerMenu = [];
-        if( $menu = $menus->where('id', app(GeneralSettings::class)->footer_primary_menu)->first() ) {
+        if( $menu = $menus->where('id', app(SiteSettings::class)->footer_primary_menu)->first() ) {
             $footerMenu = $menu['items'];
         }
 

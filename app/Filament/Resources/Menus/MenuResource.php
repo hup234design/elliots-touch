@@ -21,7 +21,7 @@ class MenuResource extends Resource
 
 //    protected static ?string $navigationGroup = "Site Management";
 
-    protected static ?int $navigationSort = 9;
+    protected static ?int $navigationSort = 90;
 
     public static function getNavigationBadge(): ?string
     {

@@ -78,7 +78,7 @@ class ImportContent extends Command
             throw new \Exception("Unsupported database connection: $connection");
         }
 
-//        $this->importMedia();
+        $this->importMedia();
         $this->importPages();
         $this->importPosts();
         $this->importEvents();

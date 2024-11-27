@@ -1,9 +1,5 @@
 <?php
 
-use App\Settings\EventsPageSettings;
-use App\Settings\HomePageSettings;
-use App\Settings\PostsPageSettings;
-
 return [
 
     /*
@@ -11,9 +7,7 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-        HomePageSettings::class,
-        PostsPageSettings::class,
-        EventsPageSettings::class,
+        \App\Settings\SiteSettings::class,
     ],
 
     /*

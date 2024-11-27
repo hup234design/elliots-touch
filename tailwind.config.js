@@ -12,7 +12,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                headline: ['"Gloria Hallelujah"', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'et-skyblue': {

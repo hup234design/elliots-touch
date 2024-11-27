@@ -4,5 +4,11 @@
 .container {
     @apply max-w-7xl mx-auto px-6 lg:px-8;
 }
+.font-headline {
+    @apply font-black text-et-navy;
+}
+.prose {
+    @apply max-w-none leading-snug;
+}
 
 @tailwind utilities;

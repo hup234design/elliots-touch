@@ -1,7 +1,10 @@
 <x-app-layout>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+
+    @section('title', $page->title)
+
+    <div class="container">
         <div class="prose max-w-none">
-            <h1>{{ $page->title }}</h1>
+            <h1 class="sr-only">{{ $page->title }}</h1>
 
             {{--            {!! tiptap_converter()->asHTML($page->content) !!}--}}
         </div>

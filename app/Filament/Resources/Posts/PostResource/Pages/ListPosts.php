@@ -13,9 +13,6 @@ class ListPosts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('Edit Posts Page')
-                ->icon('heroicon-m-queue-list')
-                ->url('/admin/manage-posts-page'),
             Actions\Action::make('Manage Categories')
                 ->icon('heroicon-o-rectangle-stack')
                 ->url('/admin/posts/post-categories'),

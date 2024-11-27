@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pages\Page;
-use App\Settings\HomePageSettings;
+use App\Settings\SiteSettings;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home(HomePageSettings $settings){
+    public function home(SiteSettings $settings){
         return view('home', ['settings' => $settings ]);
     }
 

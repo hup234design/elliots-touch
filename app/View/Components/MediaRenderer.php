@@ -22,7 +22,8 @@ class MediaRenderer extends Component
      */
     public function __construct(
         public array | null $data = null,
-        public string | null $class = "max-w-full mx-auto"
+        public string | null $class = "max-w-full mx-auto",
+        public string | null $alt = null
     )
     {
         if( $data && isset($data['media_id'])) {
