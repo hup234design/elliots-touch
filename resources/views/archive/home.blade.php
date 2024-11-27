@@ -19,31 +19,23 @@
 
 
     <div class="bg-et-blue p-4">
-        <div class="grid grid-cols-4 divide-x divide-white">
-            <div class="p-4 flex flex-col items-center justify-center text-center">
-                <a href="{{ url('/elliots-story') }}">
-                    <x-heroicon-m-information-circle class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+        <div class="grid divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+                <a href="{{ url('/elliots-story') }}" class="p-4 flex items-center justify-center text-center lg:flex-col gap-2 ">
+                    <x-heroicon-m-information-circle class="w-8 h-8 text-white lg:w-12 lg:h-12" />
                     <p class="text-md text-white font-black lg:text-xl">ABOUT US</p>
                 </a>
-            </div>
-            <div class="p-4 flex flex-col items-center justify-center text-center">
-                <a href="{{ url('/fundraising') }}">
-                    <x-heroicon-m-check-circle class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+                <a href="{{ url('/fundraising') }}" class="p-4 flex items-center justify-center text-center lg:flex-col gap-2 ">
+                    <x-heroicon-m-check-circle class="w-8 h-8 text-white lg:w-12 lg:h-12" />
                     <p class="text-md text-white font-black lg:text-xl">FUNDRAISING</p>
                 </a>
-            </div>
-            <div class="p-4 flex flex-col items-center justify-center text-center">
-                <a href="{{ url('/support-us') }}">
-                    <x-heroicon-m-currency-pound class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12 " />
+                <a href="{{ url('/support-us') }}" class="p-4 flex items-center justify-center text-center lg:flex-col gap-2 ">
+                    <x-heroicon-m-currency-pound class="w-8 h-8 text-white lg:w-12 lg:h-12 " />
                     <p class="text-md text-white font-black lg:text-xl">DONATE</p>
                 </a>
-            </div>
-            <div class="p-4 flex flex-col items-center justify-center text-center">
-                <a  href="{{ url('/contact') }}">
-                    <x-heroicon-m-envelope class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+                <a  href="{{ url('/contact') }}" class="p-4 flex items-center justify-center text-center lg:flex-col gap-2 ">
+                    <x-heroicon-m-envelope class="w-8 h-8 text-white mb-2 lg:w-12 lg:h-12" />
                     <p class="text-md text-white font-black lg:text-xl">CONTACT US</p>
                 </a>
-            </div>
         </div>
     </div>
 
