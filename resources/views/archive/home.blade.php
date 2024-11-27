@@ -20,34 +20,34 @@
 
     <div class="bg-et-blue p-4">
         <div class="grid grid-cols-4 divide-x divide-white">
-            <div class="p-4 flex flex-col items-center justify-center">
-                <a href="{{ url('/elliots-story') }}" class="text-xl text-white font-black">
-                    <x-heroicon-m-information-circle class="w-12 h-12 text-white mx-auto mb-2" />
-                    <span>ABOUT US</span>
+            <div class="p-4 flex flex-col items-center justify-center text-center">
+                <a href="{{ url('/elliots-story') }}">
+                    <x-heroicon-m-information-circle class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+                    <p class="text-md text-white font-black lg:text-xl">ABOUT US</p>
                 </a>
             </div>
-            <div class="p-4 flex flex-col items-center justify-center">
-                <a href="{{ url('/fundraising') }}" class="text-xl text-white font-black" class="text-xl text-white font-black">
-                    <x-heroicon-m-check-circle class="w-12 h-12 text-white mx-auto mb-2" />
-                    <span>FUNDRAISING</span>
+            <div class="p-4 flex flex-col items-center justify-center text-center">
+                <a href="{{ url('/fundraising') }}">
+                    <x-heroicon-m-check-circle class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+                    <p class="text-md text-white font-black lg:text-xl">FUNDRAISING</p>
                 </a>
             </div>
-            <div class="p-4 flex flex-col items-center justify-center">
-                <a href="{{ url('/support-us') }}" class="text-xl text-white font-black" class="text-xl text-white font-black">
-                    <x-heroicon-m-currency-pound class="w-12 h-12 text-white mx-auto mb-2" />
-                    <span>DONATE</span>
+            <div class="p-4 flex flex-col items-center justify-center text-center">
+                <a href="{{ url('/support-us') }}">
+                    <x-heroicon-m-currency-pound class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12 " />
+                    <p class="text-md text-white font-black lg:text-xl">DONATE</p>
                 </a>
             </div>
-            <div class="p-4 flex flex-col items-center justify-center">
-                <a  href="{{ url('/contact') }}"class="text-xl text-white font-black" class="text-xl text-white font-black">
-                    <x-heroicon-m-envelope class="w-12 h-12 text-white mx-auto mb-2" />
-                    <span>CONTACT US</span>
+            <div class="p-4 flex flex-col items-center justify-center text-center">
+                <a  href="{{ url('/contact') }}">
+                    <x-heroicon-m-envelope class="w-8 h-8 text-white mx-auto mb-2 lg:w-12 lg:h-12" />
+                    <p class="text-md text-white font-black lg:text-xl">CONTACT US</p>
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="mt-12 grid grid-cols-2 gap-16">
+    <div class="mt-12 grid gap-16 lg:grid-cols-2">
         <div class="prose max-w-none">
             <h2 class="text-et-crimson">Support Elliots Touch</h2>
             <h3>How to help....</h3>

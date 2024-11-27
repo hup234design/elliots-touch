@@ -45,11 +45,51 @@
 
     </div>
 
-    <div class="mt-12 grid grid-cols-3 gap-8">
-        <div>
-            <img src="{{ asset('/archive/images/support-us/Bristols_Childrens_Hospital.webp') }}">
+
+    <div class="mt-8 max-w-5xl mx-auto">
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations1.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations2.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations3.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations4.jpg') }}">
+            </div>
         </div>
-        <div class="col-span-2 prose prose-sm max-w-none">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="mt-4 px-8 swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations1.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations2.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations3.jpg') }}">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full" src="{{ asset('/archive/images/donations/donations4.jpg') }}">
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="mt-16 grid gap-8 lg:grid-cols-3 ">
+        <div>
+            <img class="w-full" src="{{ asset('/archive/images/support-us/Bristols_Childrens_Hospital.webp') }}">
+        </div>
+        <div class="prose prose-sm max-w-none lg:col-span-2">
             <h3>Bristol Children's Hospital</h3>
             <p class="leading-snug">The Bristol Royal Hospital for Children (BRHC) provides a local service for Bristol children and a referral service for specialist care for families across the South West and nationally.</p>
             <p class="leading-snug">Bristol Royal Hospital for Children is one of the largest children’s hospitals in England, bringing together all specialist children’s services under one roof.</p>
@@ -57,22 +97,86 @@
             <p class="leading-snug">Our academic links also make us the largest centre for medical training in the South West, attracting the highest calibre clinical staff from across the UK.</p>
         </div>
         <div>
-            <img src="{{ asset('/archive/images/support-us/Mitochondrial_Disease_Research.webp') }}">
+            <img class="w-full" src="{{ asset('/archive/images/support-us/Mitochondrial_Disease_Research.webp') }}">
         </div>
-        <div class="col-span-2 prose prose-sm max-w-none">
+        <div class="prose prose-sm max-w-none lg:col-span-2">
             <h3>Mitochondrial Disease Research</h3>
             <p class="leading-snug">Professor Shamima Rahman is an expert in the Mitochondrial Disease research field and is carrying out various pieces of research to understand Mitochondrial Disease and find ways to treat and ultimately cure children with this condition.</p>
             <p class="leading-snug">A particular research project that Professor Rahman has been heading up is “Genetic metabolic diseases – understanding of the molecular genetic basis of mitochondrial diseases”.</p>
             <p class="leading-snug">The principal aims of this research are to obtain a more complete understanding of the molecular genetic basis and natural history of mitochondrial diseases. By studying the mechanisms leading to disease in patients with mitochondrial or nuclear gene mutations that cause mitochondrial dysfunction, Professor Rahman and her team can begin to develop more effective treatments. Until the genetic basis and pathological mechanisms are understood which underlie these devastating multisystem disorders which are currently incurable, Professor Rahman and her team cannot hope to find effective treatments.</p>
         </div>
         <div>
-            <img src="{{ asset('/archive/images/support-us/Great_Ormond_Street_Hosptial.webp') }}">
+            <img class="w-full" src="{{ asset('/archive/images/support-us/Great_Ormond_Street_Hosptial.webp') }}">
         </div>
-        <div class="col-span-2 prose prose-sm max-w-none">
+        <div class="prose prose-sm max-w-none lg:col-span-2">
             <h3>Great Ormond Street Hosptial</h3>
             <p class="leading-snug">Great Ormond Street Hospital (GOSH) and the Institute of Child Health (ICH) are world leaders in the development of a life-saving technique called gene therapy.</p>
             <p class="leading-snug">Thanks to dramatic advances in our understanding of human genetics, we can now pinpoint many of the faulty genes that are responsible for particular childhood diseases. This has opened up the potential for a lifesaving technique called ‘gene therapy’ – the precise insertion of a working gene into a patient’s DNA to replace or correct a faulty, disease-causing gene.</p>
             <p class="leading-snug">By resolving the root cause of genetic diseases, gene therapy offers the prospect of effective and lasting treatment for children with conditions that were previously difficult or even impossible to manage.</p>
         </div>
     </div>
+
+    @push('styles')
+        <style>
+        .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        }
+
+        .mySwiper2 {
+        height: 80%;
+        width: 100%;
+        }
+
+        .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+        }
+
+        .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+        }
+
+        .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+        }
+
+        .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        </style>
+    @endpush
+    @push('scripts')
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 10,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+            var swiper2 = new Swiper(".mySwiper2", {
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        </script>
+    @endpush
 </x-archive.layout>

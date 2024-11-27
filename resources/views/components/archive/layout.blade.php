@@ -29,8 +29,8 @@
     <a href="{{ url('/') }}" class="block lg:w-3/4 mx-auto">
         <img class="w-full" src="{{ asset('archive/images/logo.png.webp') }}">
     </a>
-    <nav class="mt-4 px-8">
-        <ul class="flex justify-between items-center">
+    <nav class="hidden mt-4 px-8 lg:block">
+        <ul class="flex justify-between items-center text-center">
             <li class="px-4">
                 <a class="font-black text-lg" href="{{ url('/elliots-story') }}">Elliots Story</a>
             </li>
@@ -61,20 +61,20 @@
 
     <footer class="bg-black  py-8">
         <div class="max-w-6xl px-8 mx-auto px-4 lg:px-8 text-white">
-            <div class="flex items-center justify-between divide-x text-sm">
-                <div class="flex-grow pr-4 text-center">
+            <div class="flex flex-col items-center justify-between divide-y text-sm lg:flex-row lg:divide-y-0 lg:divide-x ">
+                <div class="flex-grow text-center py-4 lg:pr-4 ">
                     <p>Email us:</p>
                     <p>elliotstouch@yahoo.com</p>
                 </div>
-                <div class="flex-grow px-4 text-center">
+                <div class="flex-grow text-center py-4 lg:px-4">
                     <p>Find Us:</p>
                     <p>Watchet, United Kingdom</p>
                 </div>
-                <div class="flex-grow px-4 text-center">
+                <div class="flex-grow text-center py-4 lg:px-4">
                     <p>© 2015 Elliots Touch</p>
                     <p>Charity Number: 1094446</p>
                 </div>
-                <div class="flex-grow pl-4 text-center">
+                <div class="flex-grow text-center py-4 lg:pl-4 ">
                     <div class="inline-flex items-center gap-4">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
