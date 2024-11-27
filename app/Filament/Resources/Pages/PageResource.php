@@ -8,6 +8,7 @@ use App\Livewire\Blocks\EditorBlock;
 use App\Livewire\Blocks\GalleryBlock;
 use App\Livewire\Blocks\GoogleMapBlock;
 use App\Livewire\Blocks\ImageBlock;
+use App\Livewire\Blocks\PartnersBlock;
 use App\Models\Pages\Page;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -52,6 +53,7 @@ class PageResource extends Resource
                                 EditorBlock::schema(),
                                 ImageBlock::schema(),
                                 GalleryBlock::schema(),
+                                PartnersBlock::schema(),
 //                                \Filament\Forms\Components\Builder\Block::make('editor_block')
 //                                    ->schema([
 //                                        Forms\Components\RichEditor::make('content')

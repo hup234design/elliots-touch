@@ -10,7 +10,7 @@
             <div class="flex align-top gap-4">
                 <img class="mt-2 object-cover object-center w-40 h-40 rounded-full" src="{{ asset('archive/images/fundraising/cake-sale.png') }}">
                 <div class="prose max-w-none">
-                    <h3 class="mt-0">Cake sale at your local fate</h3>
+                    <h3 class="mt-0">Cake sale at your local fete</h3>
                     <p class="mb-0 font-semibold">Suggestions:</p>
                     <p class="mt-2 leading-snug">Ask at your local/children's school if you can setup a stall to raise money for us.</p>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="prose max-w-none">
                     <h3 class="mt-0">5-a-side football</h3>
                     <p class="mb-0 font-semibold">Suggestions:</p>
-                    <p class="mt-2 leading-snug">Challenge your mates or teacher to a 5-a-side tournament as part of a football fundraiser. Each team pays to play. IDEA 5</p>
+                    <p class="mt-2 leading-snug">Challenge your mates or teacher to a 5-a-side tournament as part of a football fundraiser. Each team pays to play.</p>
                 </div>
             </div>
             <div class="flex align-top gap-4">
