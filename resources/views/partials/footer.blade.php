@@ -70,7 +70,7 @@
 
 
             <div x-data="{}" class="mt-12">
-                <a type="button" @click="$dispatch('open-modal', {id: 'mailchimp-signup'})" class=" rounded-xl font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-et-skyblue hover:bg-et-dark-skyblue focus-visible:outline-et-dark-skyblue px-5 py-2.5 text-md">
+                <a type="button" @click="$dispatch('open-modal', {id: 'mailchimp-signup'})" class=" rounded-xl font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-et-skyblue hover:bg-et-skyblue-700 focus-visible:outline-et-skyblue-700 px-5 py-2.5 text-md hover:cursor-pointer">
                     <span class="whitespace-nowrap">Subscribe to our Newsletter</span>
                 </a>
             </div>
