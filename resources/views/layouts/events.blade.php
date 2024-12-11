@@ -1,12 +1,14 @@
 <x-app-layout>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div class="flex gap-12">
+    <div class="container">
+        <div class="flex flex-col gap-16 lg:flex-row">
             <div class="flex-1">
                 {{ $slot }}
             </div>
-            <div class="prose max-w-none">
-                <h3>Upcoming Events</h3>
-                <h3>Latest Posts</h3>
+            <div class="lg:w-64">
+                <div class="prose max-w-none">
+                    <h3>Upcoming Events</h3>
+                    <h3>Latest News</h3>
+                </div>
             </div>
         </div>
     </div>
