@@ -33,8 +33,8 @@
 
 
 <div @class([
-        "pt-20 first:pt-0" => ($this->data['include_header'] ?? false),
-        "pt-12 first:pt-0" => ! ($this->data['include_header'] ?? false)
+        "pt-24 first:pt-0" => ($this->data['include_header'] ?? false),
+        "pt-16 first:pt-0" => ! ($this->data['include_header'] ?? false)
 ])>
     @if( $this->data['include_header'] ?? false )
 
