@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(SiteSettings $settings){
-        $posts = Post::where('is_visible', true)->paginate(5);
+        $posts = Post::published()->visible()->orderBy('published_at', 'desc')->paginate(5);
         return view('posts', [
             'settings' => $settings,
             'posts' => $posts
