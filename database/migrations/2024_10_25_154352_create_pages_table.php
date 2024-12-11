@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->json('feature_blocks')->default(false);
             $table->json('content')->nullable();
             $table->json('header_image')->nullable();
             $table->boolean('is_visible')->default(true);
