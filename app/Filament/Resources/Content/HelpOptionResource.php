@@ -19,7 +19,7 @@ class HelpOptionResource extends Resource
 {
     protected static ?string $model = HelpOption::class;
 
-     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
     protected static ?string $modelLabel = 'Way to Help';
 

@@ -19,7 +19,7 @@ class FundraisingIdeaResource extends Resource
 {
     protected static ?string $model = FundraisingIdea::class;
 
-     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+     protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
     protected static ?int $navigationSort = 6;
 
