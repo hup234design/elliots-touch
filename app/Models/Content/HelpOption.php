@@ -21,4 +21,9 @@ class HelpOption extends Model implements Sortable
             'is_visible' => 'boolean'
         ];
     }
+
+    public function scopeVisible($query)
+    {
+        return $query->where('is_visible', true);
+    }
 }

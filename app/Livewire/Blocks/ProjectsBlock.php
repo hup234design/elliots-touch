@@ -11,6 +11,8 @@ class ProjectsBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->projects = Project::all();
+        $this->projects = Project::visible()
+            ->orderBy('sort_order', 'asc')
+            ->get();
     }
 }

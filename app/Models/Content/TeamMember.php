@@ -18,6 +18,12 @@ class TeamMember extends Model implements Sortable
     {
         return [
             'profile_image' => 'array',
+            'is_visible' => 'boolean'
         ];
+    }
+
+    public function scopeVisible($query)
+    {
+        return $query->where('is_visible', true);
     }
 }

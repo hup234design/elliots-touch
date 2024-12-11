@@ -11,6 +11,8 @@ class HelpOptionsBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->options = HelpOption::all();
+        $this->options = HelpOption::visible()
+            ->orderBy('sort_order', 'asc')
+            ->get();
     }
 }

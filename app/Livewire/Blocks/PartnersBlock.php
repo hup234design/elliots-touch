@@ -12,6 +12,8 @@ class PartnersBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->partners = Partner::all();
+        $this->partners = Partner::visible()
+            ->orderBy('sort_order', 'asc')
+            ->get();
     }
 }

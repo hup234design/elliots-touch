@@ -12,6 +12,8 @@ class FundraisingIdeasBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->ideas = FundraisingIdea::all();
+        $this->ideas = FundraisingIdea::visible()
+            ->orderBy('sort_order', 'asc')
+            ->get();
     }
 }

@@ -11,6 +11,8 @@ class TeamMembersBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->teamMembers = TeamMember::all();
+        $this->teamMembers = TeamMember::visible()
+            ->orderBy('sort_order', 'asc')
+            ->get();
     }
 }
