@@ -15,6 +15,7 @@ use App\Livewire\Blocks\HelpOptionsBlock;
 use App\Livewire\Blocks\HomeHeroBlock;
 use App\Livewire\Blocks\ImageBlock;
 use App\Livewire\Blocks\LatestPostsBlock;
+use App\Livewire\Blocks\LinksBlock;
 use App\Livewire\Blocks\PartnersBlock;
 use App\Livewire\Blocks\ProjectsBlock;
 use App\Livewire\Blocks\TeamMembersBlock;
@@ -72,6 +73,7 @@ class PageResource extends Resource
                                 UpcomingEventsBlock::schema(),
                                 GoogleMapBlock::schema(),
                                 TeamMembersBlock::schema(),
+                                LinksBlock::schema(),
 //                                ...$get('is_home') ? [HomeHeroBlock::schema()] : [],
 //                                ...[LatestPostsBlock::schema(),
 //                                UpcomingEventsBlock::schema(),

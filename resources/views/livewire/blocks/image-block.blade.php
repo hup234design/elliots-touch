@@ -24,7 +24,7 @@
                     'order-1' => in_array($this->data['text_alignment'], ['before', 'left']), // Place first when alignment is 'before' or 'left'
                 ])
             >
-                <x-media-renderer :data="$this->data['image']" />
+                <x-media-renderer :data="$this->data['image']" class="w-full" />
             </div>
         </div>
 
