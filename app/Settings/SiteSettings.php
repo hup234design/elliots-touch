@@ -19,6 +19,12 @@ class SiteSettings extends Settings
     public ?string $events_page_introduction;
     public ?string $header_primary_menu;
     public ?string $footer_primary_menu;
+    public ?string $social_facebook;
+    public ?string $social_instagram;
+    public ?string $social_youtube;
+    public ?string $social_linkedin;
+    public ?string $social_twitter;
+    public ?string $social_bluesky;
 
     public static function group(): string
     {

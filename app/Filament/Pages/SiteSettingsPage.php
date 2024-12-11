@@ -103,9 +103,37 @@ class SiteSettingsPage extends SettingsPage
                                     ->required(),
                             ]),
                         Tabs\Tab::make('Socials')
+                            ->columns([
+                                'default' => 1,
+                                'md' => 2,
+                            ])
                             ->schema([
-                                // ...
-                            ]),
+                                TextInput::make('social_facebook')
+                                    ->inlineLabel()->label('Facebook')
+                                    ->url()
+                                    ->columnStart(1),
+                                TextInput::make('social_instagram')
+                                    ->inlineLabel()->label('Instagram')
+                                    ->url()
+                                    ->columnStart(1),
+                                TextInput::make('social_twitter')
+                                    ->inlineLabel()->label('Twitter/X')
+                                    ->url()
+                                    ->columnStart(1),
+                                TextInput::make('social_bluesky')
+                                    ->inlineLabel()->label('BlueSky')
+                                    ->url()
+                                    ->columnStart(1),
+                                TextInput::make('social_youtube')
+                                    ->inlineLabel()->label('YouTube')
+                                    ->url()
+                                    ->columnStart(1),
+                                TextInput::make('social_linkedin')
+                                    ->inlineLabel()->label('LinkedIn')
+                                    ->url()
+                                    ->columnStart(1),
+                            ])
+                            ->columns(2),
                         Tabs\Tab::make('Contact')
                             ->schema([
                                 // ...
