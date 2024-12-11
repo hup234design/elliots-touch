@@ -186,7 +186,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->breadcrumbs(false)
             ->plugins([
-                \TomatoPHP\FilamentUsers\FilamentUsersPlugin::make(),
+//                \TomatoPHP\FilamentUsers\FilamentUsersPlugin::make(),
                 \Awcodes\Curator\CuratorPlugin::make()
                     ->label('Media')
                     ->pluralLabel('Media')
