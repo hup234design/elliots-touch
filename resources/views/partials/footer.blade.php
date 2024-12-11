@@ -54,7 +54,7 @@
                 <a href="mailto:elliotstouch@yahoo.com">elliotstouch@yahoo.com</a>
             </div>
 
-            <nav class="space-x-2 sm:space-x-4">
+            <nav class="space-x-2 sm:space-x-8">
 
                 @foreach( $footerMenu ?? [] as $menuItem)
                     @if( $menuItem['route'])
@@ -79,8 +79,13 @@
         <hr class="my-10 border-dashed border-gray-200 dark:border-gray-700/75" />
         <div class="text-gray-500 dark:text-gray-400/75">
             <span class="font-medium">
-                {{ config('app.name') }}
-            </span> ©
+                © {{ Carbon\Carbon::now()->format('Y') }} {{ config('app.name') }}
+            </span>
+        </div>
+        <div class="text-gray-500 dark:text-gray-400/75">
+            <span class="font-medium">
+                Charity Number: 1094446
+            </span>
         </div>
     </div>
 </footer>
