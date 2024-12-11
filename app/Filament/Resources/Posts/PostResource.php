@@ -45,7 +45,7 @@ class PostResource extends Resource
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),
                 Forms\Components\DateTimePicker::make('published_at'),
                 Forms\Components\Toggle::make('is_visible')

@@ -42,7 +42,7 @@ class EventResource extends Resource
                     ->required(),
                 Forms\Components\Textarea::make('summary')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),
