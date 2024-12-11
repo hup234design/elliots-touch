@@ -22,7 +22,7 @@
         @if( $crops )
             <x-curator-glider
 {{--                class="w-full"--}}
-                :class="$class"
+                :class="$imgClass"
                 fit="crop"
                 :crop="$crops"
                 :media="$media"
@@ -30,7 +30,7 @@
         @else
             <x-curator-glider
 {{--                class="w-full"--}}
-                :class="$class"
+                :class="$imgClass"
                 :media="$media"
             />
         @endif

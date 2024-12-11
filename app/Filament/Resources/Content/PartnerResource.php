@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Content;
 
-use App\Filament\Resources\PartnerResource\Pages;
-use App\Filament\Resources\PartnerResource\RelationManagers;
-use App\Models\Partner;
+use App\Filament\Resources\Content\PartnerResource\Pages;
+use App\Filament\Resources\Content\PartnerResource\RelationManagers;
+use App\Models\Content\Partner;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PartnerResource extends Resource
 {
@@ -74,9 +72,9 @@ class PartnerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPartners::route('/'),
-            'create' => Pages\CreatePartner::route('/create'),
-            'edit' => Pages\EditPartner::route('/{record}/edit'),
+            'index' => PartnerResource\Pages\ListPartners::route('/'),
+            'create' => PartnerResource\Pages\CreatePartner::route('/create'),
+            'edit' => PartnerResource\Pages\EditPartner::route('/{record}/edit'),
         ];
     }
 }

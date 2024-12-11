@@ -2,12 +2,16 @@
 
 namespace App\Filament\Pages;
 
+use App\Livewire\Blocks\GalleryBlock;
 use App\Livewire\Blocks\LatestPostsBlock;
+use App\Livewire\Blocks\TeamMembersBlock;
+use App\Livewire\Blocks\UpcomingEventsBlock;
 use App\Models\Menus\Menu;
 use App\Settings\SiteSettings;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Actions;
 use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -36,32 +40,45 @@ class SiteSettingsPage extends SettingsPage
                             ->schema([
                                 // ...
                             ]),
-                        Tabs\Tab::make('Home Page')
-                            ->schema([
-                                Group::make()
-                                    ->schema([
-                                        CuratorPicker::make('home_banner_left_image')
-                                            ->label('Selected Media')
-                                            ->columnSpan(1),
-                                        CuratorPicker::make('home_banner_center_image')
-                                            ->label('Selected Media')
-                                            ->columnSpan(2),
-                                        CuratorPicker::make('home_banner_right_image')
-                                            ->label('Selected Media')
-                                            ->columnSpan(1),
-                                    ])
-                                    ->columns(4),
-                                TextInput::make('home_intro_title')
-                                    ->required(),
-                                RichEditor::make('home_intro_text')
-                                    ->required()
-                                    ->columnSpanFull(),
-                                Builder::make('home_content_blocks')
-                                    ->blocks([
-                                        LatestPostsBlock::schema(),
-                                    ])
-                                    ->columnSpanFull(),
-                            ]),
+//                        Tabs\Tab::make('Home Page')
+//                            ->schema([
+//                                Group::make()
+//                                    ->schema([
+//                                        CuratorPicker::make('home_banner_left_image')
+//                                            ->label('Selected Media')
+//                                            ->columnSpan(1),
+//                                        CuratorPicker::make('home_banner_center_image')
+//                                            ->label('Selected Media')
+//                                            ->columnSpan(2),
+//                                        CuratorPicker::make('home_banner_right_image')
+//                                            ->label('Selected Media')
+//                                            ->columnSpan(1),
+//                                    ])
+//                                    ->columns(4),
+//                                TextInput::make('home_intro_title')
+//                                    ->required(),
+//                                RichEditor::make('home_intro_text')
+//                                    ->required()
+//                                    ->columnSpanFull(),
+//                                Builder::make('home_content_blocks')
+//                                    ->blocks([
+////                                        LatestPostsBlock::schema(),
+////                                        UpcomingEventsBlock::schema(),
+////                                        TeamMembersBlock::schema(),
+////                                        PartnersBlock::schema(),
+////                                        HelpOptionsBlock::schema(),
+////                                        EditorBlock::schema(),
+////                                        FundraisingIdeasBlock::schema(),
+//                                        Block::make('gallery')
+//                                            ->schema([
+//                                                CuratorPicker::make('images')
+//                                            ])
+////                                        GoogleMapBlock::schema(),
+////                                        ImageBlock::schema(),
+////                                        ProjectsBlock::schema(),
+//                                    ])
+//                                    ->columnSpanFull(),
+//                            ]),
                         Tabs\Tab::make('Events Page')
                             ->schema([
                                 TextInput::make('events_page_title'),

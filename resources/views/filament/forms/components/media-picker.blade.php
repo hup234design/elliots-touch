@@ -26,8 +26,8 @@
                 $wire.set('{{ $statePath }}.caption', null);
             },
             updateCrops: function (event) {
-                console.log('updateCrops function called', event.detail);
-                $wire.set('{{ $statePath }}.crops', event.detail[0]);
+                if (event.detail[0].statePath !== '{{ $statePath }}') return;
+                $wire.set('{{ $statePath }}.crops', event.detail[0].crops);
             }
         }"
         x-init="$watch('state.media_id', value => {

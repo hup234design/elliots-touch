@@ -2,71 +2,69 @@
 
 namespace App\Livewire\Blocks;
 
-use App\Filament\Forms\Components\MediaImagePreview;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\Curations\CurationPreset;
-use Awcodes\Curator\Curations\ThumbnailPreset;
-use Awcodes\Curator\Models\Media;
+use App\Filament\Forms\Components\MediaPicker;
 use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 
 class ImageBlock extends BaseBlockComponent
 {
-    public ?string $crops = null;
-    public ?string $width = 'full';
-    public ?string $alignment = 'center';
+//    public ?string $crops = null;
+//    public ?string $width = 'full';
+//    public ?string $alignment = 'center';
 
-    public function mount($data)
-    {
-        if( $data['crops'] ) {
-            $this->crops = implode(',', array_values($data['crops']));
-        }
-        if( isset($data['width']) ) {
-            $this->width = $data['width'];
-        }
-        if( isset($data['alignment']) ) {
-            $this->alignment = $data['alignment'];
-        }
-    }
+//    public function mount($data)
+//    {
+//        if( $data['crops'] ) {
+//            $this->crops = implode(',', array_values($data['crops']));
+//        }
+//        if( isset($data['width']) ) {
+//            $this->width = $data['width'];
+//        }
+//        if( isset($data['alignment']) ) {
+//            $this->alignment = $data['alignment'];
+//        }
+//    }
 
     public static function blockSchema(): array
     {
         return [
-            Group::make([
-                Group::make([
-                    CuratorPicker::make('media_id')
-                        ->constrained(true)
-                        ->size('sm')
-                        ->label('Selected Media'),
-                    Select::make('width')
+            Group::make()
+                ->schema([
+                    Toggle::make('include_text')
                         ->inlineLabel()
-                        ->options([
-                            'full' => 'Full Width',
-                            '3/4' => '3/4',
-                            '2/3' => '2/3',
-                            '1/2' => '1/2',
-                        ])
-                        ->default('full'),
-                    Select::make('alignment')
+                        ->live()
+                        ->default(false),
+                    Radio::make('text_alignment')
+                        ->inline()
                         ->inlineLabel()
+                        ->required()
                         ->options([
-                            'center' => 'Center',
-                            'left' => 'Left',
-                            'right' => 'Right',
+                            'before' => 'Before Image',
+                            'after' => 'After Image',
+                            'left' => 'Left of Image',
+                            'right' => 'Right of Image'
                         ])
-                        ->default('center'),
-                ]),
-                MediaImagePreview::make('crops')
-                    ->label(fn(Get $get) => 'Image Preview' . ($get('crops') ? ' (Cropped)' : ''))
-                    ->media(fn(Get $get) => $get('media_id'))
-                    ->live()
-                    ->visible(fn(Get $get) => $get('media_id')),
-            ])
+                        ->default('right')
+                        ->live()
+                        ->visible(fn(Get $get) => $get('include_text')),
+                ])
+                ->columnSpanFull(),
+            Group::make()
+                ->schema([
+                    RichEditor::make('text')
+                        ->columnSpan(fn(Get $get) => $get('text_alignment') == 'before' ? 2 : 1)
+                        ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['before','left'])),
+                    MediaPicker::make('image')
+                        ->columnSpan(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['left','right']) ? 1 : 2),
+                    RichEditor::make('text')
+                        ->columnSpan(fn(Get $get) => $get('text_alignment') == 'after' ? 2 : 1)
+                        ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['right','after']))
+                ])
                 ->columnSpanFull()
-                ->columns(2),
-
+                ->columns(2)
         ];
     }
 }

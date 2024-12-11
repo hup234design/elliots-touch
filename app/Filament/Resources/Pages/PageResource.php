@@ -4,14 +4,27 @@ namespace App\Filament\Resources\Pages;
 
 use App\Filament\Resources\Pages\PageResource\Pages;
 use App\Filament\Resources\Pages\PageResource\RelationManagers;
+
+use App\Livewire\Blocks\ImageTextBlock;
+
 use App\Livewire\Blocks\EditorBlock;
+use App\Livewire\Blocks\FundraisingIdeasBlock;
 use App\Livewire\Blocks\GalleryBlock;
 use App\Livewire\Blocks\GoogleMapBlock;
+use App\Livewire\Blocks\HelpOptionsBlock;
+use App\Livewire\Blocks\HomeHeroBlock;
 use App\Livewire\Blocks\ImageBlock;
+use App\Livewire\Blocks\LatestPostsBlock;
 use App\Livewire\Blocks\PartnersBlock;
+use App\Livewire\Blocks\ProjectsBlock;
+use App\Livewire\Blocks\TeamMembersBlock;
+use App\Livewire\Blocks\UpcomingEventsBlock;
+use App\Livewire\Blocks\VideoBlock;
 use App\Models\Pages\Page;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -44,30 +57,34 @@ class PageResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('slug')
                     ->required(),
-                \Filament\Forms\Components\Group::make()
+                Forms\Components\Group::make()
                     ->schema([
                         \Filament\Forms\Components\Builder::make('content')
                             ->blockNumbers(false)
                             ->collapsible()
-                            ->blocks([
+                            ->collapsed()
+                            ->blocks(fn(Get $get) => [
                                 EditorBlock::schema(),
                                 ImageBlock::schema(),
                                 GalleryBlock::schema(),
-                                PartnersBlock::schema(),
-//                                \Filament\Forms\Components\Builder\Block::make('editor_block')
-//                                    ->schema([
-//                                        Forms\Components\RichEditor::make('content')
-//                                            ->hiddenLabel()
-//                                    ]),
-                                \Filament\Forms\Components\Builder\Block::make('team_members_block')
-                                    ->schema([ ]),
-                                \Filament\Forms\Components\Builder\Block::make('fundraising_ideas_block')
-                                    ->schema([ ]),
-                                \Filament\Forms\Components\Builder\Block::make('projects_block')
-                                    ->schema([ ]),
-                                \Filament\Forms\Components\Builder\Block::make('help_options_block')
-                                    ->schema([ ]),
+                                VideoBlock::schema(),
+                                LatestPostsBlock::schema(),
+                                UpcomingEventsBlock::schema(),
                                 GoogleMapBlock::schema(),
+                                TeamMembersBlock::schema(),
+//                                ...$get('is_home') ? [HomeHeroBlock::schema()] : [],
+//                                ...[LatestPostsBlock::schema(),
+//                                UpcomingEventsBlock::schema(),
+//                                TeamMembersBlock::schema(),
+//                                PartnersBlock::schema(),
+//                                HelpOptionsBlock::schema(),
+//                                EditorBlock::schema(),
+//                                FundraisingIdeasBlock::schema(),
+//                                GalleryBlock::schema(),
+//                                GoogleMapBlock::schema(),
+//                                ImageBlock::schema(),
+//                                ProjectsBlock::schema(),
+//                                ]
                             ])
                             ->columnSpanFull(),
                         Forms\Components\Toggle::make('is_visible')
@@ -84,6 +101,8 @@ class PageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                    Tables\Columns\IconColumn::make('is_home')
+                        ->boolean(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')

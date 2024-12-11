@@ -1,6 +1,6 @@
 <x-blocks.wrapper>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-        @foreach($this->posts as $post)
+        @foreach($this->events as $event)
             <div
                 class="flex flex-col overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800"
             >
@@ -24,14 +24,14 @@
                     </div>
                     <div class="h-48">
                         <x-media-renderer
-                            :data="$post->featured_image"
+                            :data="$event->featured_image"
                             class="object-cover object-center w-full h-full"
-                            alt="Featured Image of blog post"
+                            alt="Featured Image of event"
                         />
                     </div>
                     {{--                        <img--}}
                     {{--                            src="https://cdn.tailkit.com/media/placeholders/photo-73F4pKoUkM0-800x600.jpg"--}}
-                    {{--                            alt="Featured Image of blog post"--}}
+                    {{--                            alt="Featured Image of event"--}}
                     {{--                        />--}}
                 </a>
                 <div class="py-6 prose">
@@ -40,15 +40,15 @@
                             href="javascript:void(0)"
                             class="not-prose text-gray-800 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-400"
                         >
-                            {{ $post->title }}
+                            {{ $event->title }}
                         </a>
                     </h2>
                     <p class="mb-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                        {{ $post->published_at }}
+                        {{ $event->published_at }}
                     </p>
                     {{--                        <p class="leading-relaxed text-gray-600 dark:text-gray-400">--}}
                     <p class="">
-                        {{ nl2br($post->summary) }}
+                        {{ nl2br($event->summary) }}
                     </p>
                 </div>
             </div>

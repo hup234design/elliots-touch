@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->integer('sort_order')->default(1);
             $table->string('name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('url')->nullable();
             $table->json('logo')->nullable();
+            $table->boolean('is_visible')->default(true);
             $table->timestamps();
         });
     }

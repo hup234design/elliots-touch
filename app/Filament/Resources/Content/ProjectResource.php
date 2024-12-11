@@ -37,10 +37,7 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\TextInput::make('subtitle'),
-                TiptapEditor::make('content')
-                    ->profile('default')
-                    ->output(TiptapOutput::Html) // optional, change the format for saved data, default is html
-                    ->maxContentWidth('full')
+                Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),

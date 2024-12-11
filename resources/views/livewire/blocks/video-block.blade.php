@@ -1,4 +1,3 @@
-
 <x-blocks.wrapper>
     @if( $this->data['include_text'] )
         <div
@@ -24,11 +23,11 @@
                     'order-1' => in_array($this->data['text_alignment'], ['before', 'left']), // Place first when alignment is 'before' or 'left'
                 ])
             >
-                <x-media-renderer :data="$this->data['image']" />
+                <x-matinee::embed :data="$this->data['video']" />
             </div>
         </div>
 
     @else
-        <x-media-renderer :data="$this->data['image']" />
+        <x-matinee::embed :data="$this->data['video']" />
     @endif
 </x-blocks.wrapper>

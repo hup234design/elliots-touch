@@ -3,9 +3,8 @@
 namespace App\Livewire\Blocks;
 
 use App\Models\Content\TeamMember;
-use Livewire\Component;
 
-class TeamMembersBlock extends Component
+class TeamMembersBlock extends BaseBlockComponent
 {
     public $teamMembers = [];
 
@@ -13,10 +12,5 @@ class TeamMembersBlock extends Component
     {
         $this->data = $data;
         $this->teamMembers = TeamMember::all();
-    }
-
-    public function render()
-    {
-        return view('livewire.blocks.team-members-block');
     }
 }

@@ -19,6 +19,7 @@ class Project extends Model implements Sortable
         return [
             'content' => 'array',
             'featured_image' => 'array',
+            'is_visible' => 'boolean'
         ];
     }
 }

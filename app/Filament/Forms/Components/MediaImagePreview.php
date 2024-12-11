@@ -74,7 +74,8 @@ class MediaImagePreview extends Field
                 return [
                     MediaImageCropper::make("crop")
                         ->media($this->getMedia())
-                        ->crops($this->getState()),
+                        ->crops($this->getState())
+                        ->statePath($this->getStatePath()),
                 ];
             })
             ->modalWidth('7xl')

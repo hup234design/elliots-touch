@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home(SiteSettings $settings)
+    public function home()
     {
-
         if (auth()->check()) {
-            return view('home', ['settings' => $settings]);
+            $page = Page::where('is_home', true)->firstOrFail();
+            return view('home', ['page' => $page]);
         } else {
             return view('archive.home');
         }

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Blocks;
 
-use App\Models\Partner;
+use App\Models\Content\Partner;
 use Livewire\Component;
 
 class PartnersBlock extends BaseBlockComponent

@@ -6,6 +6,7 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/**/*.blade.php',
+        './resources/**/*.php',
         './resources/**/*.js',
         './resources/**/*.vue',
     ],
@@ -16,6 +17,20 @@ export default {
                 headline: ['"Gloria Hallelujah"', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                'primary': {
+                    DEFAULT: '#24BFF8',
+                    50: '#D6F3FE',
+                    100: '#C2EDFD',
+                    200: '#9BE2FC',
+                    300: '#73D6FB',
+                    400: '#4CCBF9',
+                    500: '#24BFF8',
+                    600: '#07A3DD',
+                    700: '#057BA6',
+                    800: '#045370',
+                    900: '#022B3A',
+                    950: '#01171F'
+                },
                 'et-skyblue': {
                     DEFAULT: '#24BFF8',
                     50: '#D6F3FE',
@@ -72,7 +87,31 @@ export default {
                     900: '#000000',
                     950: '#000000'
                 }, // Adjusted darker version of et-darkblue
-            }
+            },
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        blockquote: {
+                            backgroundColor: theme('colors.gray.100'),
+                            color: theme('colors.et-navy.500'), // Change text color
+                            fontWeight: 'bold', // Make text bold
+                            borderLeftWidth: theme('borderWidth.4'), // Thicker left border
+                            borderLeftColor: theme('colors.et-navy.500'), // Stronger color for the border
+                            padding: theme('spacing.4'), // Adjust padding to accommodate thicker border
+                            marginLeft: 0,
+                            marginRight: 0,
+                            textAlign: 'center', // Center align all text
+                            quotes: '"\\201C""\\201D""\\2018""\\2019"',
+                            '&::before': {
+                                content: 'open-double-quote',
+                            },
+                            '&::after': {
+                                content: 'close-double-quote',
+                            },
+                        },
+                    },
+                },
+            }),
         },
     },
     plugins: [

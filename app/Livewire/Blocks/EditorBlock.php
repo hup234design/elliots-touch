@@ -10,7 +10,8 @@ class EditorBlock extends BaseBlockComponent
     {
         return [
             RichEditor::make('content')
-                ->hiddenLabel(),
+                ->hiddenLabel()
+                ->columnSpanFull(),
         ];
     }
 }

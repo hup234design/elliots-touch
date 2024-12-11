@@ -2,12 +2,15 @@
 
 namespace App\Livewire\Blocks;
 
-use Livewire\Component;
+use App\Models\Content\HelpOption;
 
-class HelpOptionsBlock extends Component
+class HelpOptionsBlock extends BaseBlockComponent
 {
-    public function render()
+    public $options = [];
+
+    public function mount($data)
     {
-        return view('livewire.blocks.help-options-block');
+        $this->data = $data;
+        $this->options = HelpOption::all();
     }
 }

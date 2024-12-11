@@ -9,6 +9,7 @@
         "arbermustafa/filament-locationpickr-field": "^2.0.0",
         "awcodes/filament-curator": "^3.6",
         "awcodes/filament-tiptap-editor": "^3.0",
+        "awcodes/matinee": "^1.0",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-google-fonts-plugin": "^3.2",
         "filament/spatie-laravel-settings-plugin": "^3.2",

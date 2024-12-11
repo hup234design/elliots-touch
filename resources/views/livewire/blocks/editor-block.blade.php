@@ -1,5 +1,5 @@
-<div>
-    <div class="prose max-w-none">
+<x-blocks.wrapper>
+    <div class="prose">
         {!! $this->data['content'] !!}
     </div>
-</div>
+</x-blocks.wrapper>

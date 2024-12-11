@@ -28,7 +28,6 @@ class MediaPicker extends Field
         parent::setUp();
 
         $this->afterStateHydrated(function (MediaPicker $component, $state) {
-            ray('afterStateHydrated', $state); // Debugging
             $component->state([
                 'media_id' => $state['media_id'] ?? '',
                 'curation' => $state['curation'] ?? '',
@@ -38,7 +37,6 @@ class MediaPicker extends Field
         });
 
         $this->dehydrateStateUsing(function ($state) {
-            ray('dehydrateStateUsing', $state); // Debugging
             return [
                 'media_id' => $state['media_id'] ?? '',
                 'curation' => $state['curation'] ?? '',
@@ -128,9 +126,13 @@ class MediaPicker extends Field
             ->action(function (\Livewire\Component $livewire, Set $set, array $data, $state) : void {
                 ray($data['crop']);
                 ray(json_encode($data['crop']));
+                ray($this->getStatePath());
                 $state['crops'] = json_encode($data['crop']);
                 $set('crops', json_encode($data['crop']));
-                $livewire->dispatch('update-crops', json_encode($data['crop']));
+                $livewire->dispatch('update-crops', [
+                    'statePath' => $this->getStatePath(),
+                    'crops' => json_encode($data['crop'])
+                ]);
             })
             ->closeModalByClickingAway(false);
     }

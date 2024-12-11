@@ -2,12 +2,16 @@
 
 namespace App\Livewire\Blocks;
 
+use App\Models\Content\FundraisingIdea;
 use Livewire\Component;
 
-class FundraisingIdeasBlock extends Component
+class FundraisingIdeasBlock extends BaseBlockComponent
 {
-    public function render()
+    public $ideas = [];
+
+    public function mount($data)
     {
-        return view('livewire.blocks.fundraising-ideas-block');
+        $this->data = $data;
+        $this->ideas = FundraisingIdea::all();
     }
 }

@@ -13,9 +13,4 @@ class LatestPostsBlock extends BaseBlockComponent
         $this->data = $data;
         $this->posts = Post::take(3)->get();
     }
-
-    public function render()
-    {
-        return view('livewire.blocks.latest-posts-block');
-    }
 }

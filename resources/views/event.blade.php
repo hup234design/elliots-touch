@@ -1,24 +1,13 @@
 <x-events-layout>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    @section('title', $settings->events_page_title)
+    <div class="container">
         <div class="prose max-w-none">
             <h1>{{ $event->title }}</h1>
-            {!! $event->content !!}
-
-            @if( $event->image)
-                {{--                <div>--}}
-                <x-media-renderer :data="$event->image" class="w-full"/>
-                {{--                </div>--}}
+            <p>{{ $event->date }}</p>
+            @if( $event->featured_image)
+                <x-media-renderer :data="$event->featured_image" class="w-full"/>
             @endif
-
-            {{--            @if( $post->featuredImage)--}}
-            {{--                <div>--}}
-            {{--                    <p>Featured Image</p>--}}
-            {{--                <x-mediable-renderer--}}
-            {{--                    :mediable="$post->featuredImage"--}}
-            {{--                    class="w-full"--}}
-            {{--                />--}}
-            {{--                </div>--}}
-            {{--            @endif--}}
+            {!! $event->content !!}
         </div>
     </div>
 </x-events-layout>

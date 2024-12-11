@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     public function index(SiteSettings $settings){
-        $events = Event::where('is_visible', true)->get();
+        $events = Event::where('is_visible', true)->paginate(5);
         return view('events', [
             'settings' => $settings,
             'events' => $events

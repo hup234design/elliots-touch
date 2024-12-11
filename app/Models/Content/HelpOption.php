@@ -18,6 +18,7 @@ class HelpOption extends Model implements Sortable
     {
         return [
             'featured_image' => 'array',
+            'is_visible' => 'boolean'
         ];
     }
 }

@@ -2,13 +2,13 @@
 @tailwind components;
 
 .container {
-    @apply max-w-7xl mx-auto px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
 }
 .font-headline {
-    @apply font-black text-et-navy;
+    @apply font-black text-et-navy tracking-wide;
 }
 .prose {
-    @apply max-w-none leading-snug;
+    @apply max-w-none;
 }
 
 @tailwind utilities;

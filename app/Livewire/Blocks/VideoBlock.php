@@ -2,14 +2,14 @@
 
 namespace App\Livewire\Blocks;
 
-use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Awcodes\Matinee\Matinee;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 
-class GalleryBlock extends BaseBlockComponent
+class VideoBlock extends BaseBlockComponent
 {
     public static function blockSchema(): array
     {
@@ -25,10 +25,10 @@ class GalleryBlock extends BaseBlockComponent
                         ->inlineLabel()
                         ->required()
                         ->options([
-                            'before' => 'Before Gallery',
-                            'after' => 'After Gallery',
-                            'left' => 'Left of Gallery',
-                            'right' => 'Right of Gallery'
+                            'before' => 'Before Video',
+                            'after' => 'After Video',
+                            'left' => 'Left of Video',
+                            'right' => 'Right of Video'
                         ])
                         ->default('right')
                         ->live()
@@ -40,9 +40,8 @@ class GalleryBlock extends BaseBlockComponent
                     RichEditor::make('text')
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'before' ? 2 : 1)
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['before','left'])),
-                    CuratorPicker::make('images')
-                        ->multiple()
-                        ->listDisplay()
+                    Matinee::make('video')
+                        ->showPreview()
                         ->columnSpan(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['left','right']) ? 1 : 2),
                     RichEditor::make('text')
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'after' ? 2 : 1)

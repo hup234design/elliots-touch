@@ -15,6 +15,7 @@ class Page extends Model
             'content' => 'array',
             'header_image' => 'array',
             'is_visible' => 'boolean',
+            'is_home' => 'boolean',
         ];
     }
 

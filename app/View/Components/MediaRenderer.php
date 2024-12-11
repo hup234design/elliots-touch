@@ -16,6 +16,7 @@ class MediaRenderer extends Component
     public ?Media  $media = null;
     public ?string $curation = null;
     public ?string $caption = null;
+    public ?string $imgClass = null;
 
     /**
      * Create a new component instance.
@@ -40,6 +41,7 @@ class MediaRenderer extends Component
                 $this->caption = $data['caption'];
             }
         }
+        $this->imgClass = $class;
 
 //
 //        if( $mediable?->crops ) {
