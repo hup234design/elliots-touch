@@ -186,6 +186,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->breadcrumbs(false)
             ->plugins([
+                \TomatoPHP\FilamentUsers\FilamentUsersPlugin::make(),
                 \Awcodes\Curator\CuratorPlugin::make()
                     ->label('Media')
                     ->pluralLabel('Media')
@@ -223,7 +224,8 @@ class AdminPanelProvider extends PanelProvider
                 //     ->label(fn (): string => __('navigation.settings'))
                 //     ->icon('heroicon-o-cog-6-tooth')
                 //     ->collapsed(),
-            ]);
+            ])
+            ->emailVerification(false);
     }
 
     /**

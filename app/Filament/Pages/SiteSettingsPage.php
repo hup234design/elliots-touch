@@ -22,13 +22,17 @@ use Filament\Pages\SettingsPage;
 
 class SiteSettingsPage extends SettingsPage
 {
-    protected static ?string $title = 'Settings';
+    protected static ?string $title = 'Site Options';
 
     protected static string $settings = SiteSettings::class;
 
+    protected static ?string $navigationGroup = 'Settings';
+
+    protected static ?string $navigationLabel = 'Site Options';
+
     protected static ?string $navigationIcon = 'heroicon-o-cog';
 
-    protected static ?int $navigationSort = 100;
+    protected static ?int $navigationSort = 0;
 
     public function form(Form $form): Form
     {
