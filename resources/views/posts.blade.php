@@ -35,7 +35,7 @@
                                 </h3>
                                 <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
                                     <span class="font-medium">
-                                        {{ $post->published_at->format('Y-m-d') }}
+                                        {{ format_carbon_date($post->published_at) }}
                                     </span>
                                 </p>
                                 <p>{{ nl2br($post->summary) }}</p>

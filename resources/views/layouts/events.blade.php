@@ -11,7 +11,7 @@
                         <div class="space-y-6">
                             @foreach($upcomingEvents as $upcomingEvent)
                                 <div>
-                                    <p class="prose-sm mb-0">{{ $upcomingEvent->date }}</p>
+                                    <p class="prose-sm mb-0">{{ format_carbon_date($upcomingEvent->date) }}</p>
                                     <h4 class="mt-1 leading-tight">
                                         <a class="no-underline font-semibold text-et-skyblue-700" href="{{ route('events.event', $upcomingEvent->slug) }}">
                                             {{ $upcomingEvent->title }}
@@ -26,7 +26,7 @@
                             <div class="space-y-6">
                         @foreach($latestPosts as $latestPost)
                                     <div>
-                            <p class="prose-sm mb-0">{{ $latestPost->published_at }}</p>
+                            <p class="prose-sm mb-0">{{ format_carbon_date($latestPost->published_at) }}</p>
                             <h4 class="mt-1 leading-tight">
                                 <a class="no-underline font-semibold text-et-skyblue-700" href="{{ route('posts.post', $latestPost->slug) }}">
                                     {{ $latestPost->title }}

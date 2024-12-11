@@ -35,7 +35,7 @@
                                 </h3>
                                 <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
                                     <span class="font-medium">
-                                        {{ $event->date->format('Y-m-d') }}
+                                        {{ format_carbon_date($event->date) }}
                                     </span>
                                 </p>
                                 <p>{{ nl2br($event->summary) }}</p>
