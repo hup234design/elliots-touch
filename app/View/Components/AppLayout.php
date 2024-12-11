@@ -14,8 +14,10 @@ class AppLayout extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {}
+    public function __construct(SiteSettings $settings)
+    {
+        $this->settings = $settings;
+    }
 
     /**
      * Get the view / contents that represent the component.
@@ -38,6 +40,7 @@ class AppLayout extends Component
         $pages = Page::where('is_visible',true)->pluck('title','slug');
 
         return view('layouts.app', [
+            'settings' => $this->settings,
             'pages' => $pages,
             'headerMenu' => $headerMenu,
             'footerMenu' => $footerMenu,

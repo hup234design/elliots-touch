@@ -120,18 +120,18 @@ class SiteSettingsPage extends SettingsPage
                                     ->inlineLabel()->label('Twitter/X')
                                     ->url()
                                     ->columnStart(1),
-                                TextInput::make('social_bluesky')
-                                    ->inlineLabel()->label('BlueSky')
-                                    ->url()
-                                    ->columnStart(1),
-                                TextInput::make('social_youtube')
-                                    ->inlineLabel()->label('YouTube')
-                                    ->url()
-                                    ->columnStart(1),
-                                TextInput::make('social_linkedin')
-                                    ->inlineLabel()->label('LinkedIn')
-                                    ->url()
-                                    ->columnStart(1),
+//                                TextInput::make('social_bluesky')
+//                                    ->inlineLabel()->label('BlueSky')
+//                                    ->url()
+//                                    ->columnStart(1),
+//                                TextInput::make('social_youtube')
+//                                    ->inlineLabel()->label('YouTube')
+//                                    ->url()
+//                                    ->columnStart(1),
+//                                TextInput::make('social_linkedin')
+//                                    ->inlineLabel()->label('LinkedIn')
+//                                    ->url()
+//                                    ->columnStart(1),
                             ])
                             ->columns(2),
                         Tabs\Tab::make('Contact')

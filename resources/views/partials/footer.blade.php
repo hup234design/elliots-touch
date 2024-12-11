@@ -7,7 +7,10 @@
     >
         <div class="space-y-10">
             <nav class="space-x-4">
-                <a href="javascript:void(0)" class="text-gray-400 hover:text-[#1877f2]">
+                @if( $settings->social_facebook )
+                <a
+                    href="{{ $settings->social_facebook }}" target="_blank"
+                    class="text-gray-400 hover:text-[#1877f2]">
                     <svg
                         class="icon-facebook inline-block size-5"
                         xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +22,10 @@
                         ></path>
                     </svg>
                 </a>
+                @endif
+                    @if( $settings->social_twitter )
                 <a
-                    href="javascript:void(0)"
+                    href="{{ $settings->social_twitter }}" target="_blank"
                     class="text-gray-400 hover:text-gray-800 dark:hover:text-white"
                 >
                     <svg
@@ -35,7 +40,9 @@
                         />
                     </svg>
                 </a>
-                <a href="javascript:void(0)" class="text-gray-400 hover:text-[#405de6]">
+                    @endif
+                    @if( $settings->social_instagram )
+                <a href="{{ $settings->social_instagram }}" target="_blank"  class="text-gray-400 hover:text-[#405de6]">
                     <svg
                         class="icon-instagram inline-block size-5"
                         xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +54,7 @@
                         ></path>
                     </svg>
                 </a>
+                    @endif
 
             </nav>
 
