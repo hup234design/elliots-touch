@@ -4,9 +4,12 @@ namespace App\Models\Pages;
 
 use App\Services\MenuCacheService;
 use Illuminate\Database\Eloquent\Model;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Page extends Model
 {
+    use HasSEO;
+
     protected $guarded = [];
 
     protected function casts() : array
@@ -16,6 +19,7 @@ class Page extends Model
             'header_image' => 'array',
             'is_visible' => 'boolean',
             'is_home' => 'boolean',
+            'seo_image' => 'array',
         ];
     }
 

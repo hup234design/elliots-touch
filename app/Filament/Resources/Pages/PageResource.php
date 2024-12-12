@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Pages;
 
+use App\Filament\Forms\Components\MediaPicker;
 use App\Filament\Resources\Pages\PageResource\Pages;
 use App\Filament\Resources\Pages\PageResource\RelationManagers;
 
@@ -35,12 +36,13 @@ use FilamentTiptapEditor\TiptapEditor;
 use Hoa\Exception\Group;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use RalphJSmit\Filament\SEO\SEO;
 
 class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
 
-     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationLabel = "Pages";
 
@@ -55,13 +57,30 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\TextInput::make('slug')
-                    ->required(),
-                Forms\Components\Group::make()
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->maxLength(255)
+                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                            ->columnSpan(2),
+                        Forms\Components\TextInput::make('slug')
+                            ->disabled()
+                            ->dehydrated()
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(Page::class, 'slug', ignoreRecord: true)
+                            ->columnSpan(2),
+                        Forms\Components\Toggle::make('is_visible')
+                            ->inline(false)
+//                            ->required(),
+                    ])
+                    ->columns(5),
+                Forms\Components\Section::make('Content')
                     ->schema([
                         \Filament\Forms\Components\Builder::make('content')
+                            ->hiddenLabel()
                             ->blockNumbers(false)
                             ->collapsible()
                             ->collapsed()
@@ -76,25 +95,20 @@ class PageResource extends Resource
                                 GoogleMapBlock::schema(),
                                 TeamMembersBlock::schema(),
                                 LinksBlock::schema(),
-//                                ...$get('is_home') ? [HomeHeroBlock::schema()] : [],
-//                                ...[LatestPostsBlock::schema(),
-//                                UpcomingEventsBlock::schema(),
-//                                TeamMembersBlock::schema(),
-//                                PartnersBlock::schema(),
-//                                HelpOptionsBlock::schema(),
-//                                EditorBlock::schema(),
-//                                FundraisingIdeasBlock::schema(),
-//                                GalleryBlock::schema(),
-//                                GoogleMapBlock::schema(),
-//                                ImageBlock::schema(),
-//                                ProjectsBlock::schema(),
-//                                ]
                             ])
-                            ->columnSpanFull(),
-                        Forms\Components\Toggle::make('is_visible')
-                            ->required(),
+                            ->collapsible()
+                            ->columnSpanFull()
                     ])
-                    ->columnSpanFull()
+                    ->collapsible()
+                    ->hiddenOn('create'),
+                Forms\Components\Section::make('SEO')
+                    ->schema([
+                        SEO::make(['title','description']),
+                        MediaPicker::make('seo_image'),
+                    ])
+                    ->collapsible()
+                    ->collapsed()
+                    ->columns(2)
                     ->hiddenOn('create')
             ]);
     }
@@ -105,8 +119,8 @@ class PageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                    Tables\Columns\IconColumn::make('is_home')
-                        ->boolean(),
+                Tables\Columns\IconColumn::make('is_home')
+                    ->boolean(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
