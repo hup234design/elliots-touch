@@ -19,6 +19,7 @@ use App\Livewire\Blocks\LinksBlock;
 use App\Livewire\Blocks\PartnersBlock;
 use App\Livewire\Blocks\ProjectsBlock;
 use App\Livewire\Blocks\TeamMembersBlock;
+use App\Livewire\Blocks\TwoColumnsBlock;
 use App\Livewire\Blocks\UpcomingEventsBlock;
 use App\Livewire\Blocks\VideoBlock;
 use App\Models\Pages\Page;
@@ -66,6 +67,7 @@ class PageResource extends Resource
                             ->collapsed()
                             ->blocks(fn(Get $get) => [
                                 EditorBlock::schema(),
+                                TwoColumnsBlock::schema(),
                                 ImageBlock::schema(),
                                 GalleryBlock::schema(),
                                 VideoBlock::schema(),
