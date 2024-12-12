@@ -6,12 +6,12 @@
             <!-- Team -->
             <div class="grid grid-cols-1 gap-20 sm:grid-cols-2 md:gap-12 lg:gap-20">
                 @foreach($this->teamMembers as $teamMember)
-                    <div class="group space-y-4 lg:flex lg:gap-6 lg:space-y-0 p-6 -m-6 hover:bg-gray-50">
+                    <div class="group space-y-4 lg:flex lg:gap-6 lg:space-y-0">
                         <div class="flex-none lg:w-2/5 overflow-hidden">
-                        <div class="aspect-square">
+                        <div class="aspect-square rounded-full overflow-hidden">
                             <x-media-renderer
                                 :data="$teamMember->profile_image"
-                                class="object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-105"
+                                class="object-cover object-center w-full h-full rounded-full transition duration-300 ease-in-out group-hover:scale-105"
                             />
                         </div>
                         </div>

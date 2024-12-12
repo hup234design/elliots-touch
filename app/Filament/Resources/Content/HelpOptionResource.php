@@ -41,6 +41,11 @@ class HelpOptionResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\RichEditor::make('content')
+                    ->disableToolbarButtons([
+                        'attachFiles',
+                        'strike',
+                        'codeBlock'
+                    ])
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),

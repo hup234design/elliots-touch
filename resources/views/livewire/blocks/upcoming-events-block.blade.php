@@ -2,9 +2,8 @@
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-12">
         @foreach($this->events as $event)
             <div
-                class="group flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800"
+                class="group clickable flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800"
             >
-                <a href="{{ route('events.event', $event->slug) }}">
                     <div class="h-48">
                         <x-media-renderer
                             :data="$event->featured_image"
@@ -12,7 +11,6 @@
                             :alt="$event->title . ' Featured Image'"
                         />
                     </div>
-                </a>
                 <div class="py-6 prose">
                     <h2 class="mb-2 text-lg sm:text-xl">
                         <a

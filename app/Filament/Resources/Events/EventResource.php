@@ -43,6 +43,11 @@ class EventResource extends Resource
                 Forms\Components\Textarea::make('summary')
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
+                    ->disableToolbarButtons([
+                        'attachFiles',
+                        'strike',
+                        'codeBlock'
+                    ])
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),

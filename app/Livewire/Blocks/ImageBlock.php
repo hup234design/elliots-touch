@@ -55,11 +55,21 @@ class ImageBlock extends BaseBlockComponent
             Group::make()
                 ->schema([
                     RichEditor::make('text')
+                        ->disableToolbarButtons([
+                            'attachFiles',
+                            'strike',
+                            'codeBlock'
+                        ])
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'before' ? 2 : 1)
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['before','left'])),
                     MediaPicker::make('image')
                         ->columnSpan(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['left','right']) ? 1 : 2),
                     RichEditor::make('text')
+                        ->disableToolbarButtons([
+                            'attachFiles',
+                            'strike',
+                            'codeBlock'
+                        ])
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'after' ? 2 : 1)
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['right','after']))
                 ])

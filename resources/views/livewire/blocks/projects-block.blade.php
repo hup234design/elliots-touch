@@ -12,9 +12,9 @@
                         />
                     </div>
                 </div>
-                <div class="lg:col-span-2">
-                    <div class="prose min-h-64">
-                        <h3 class="mt-0">
+                <div class="mt-4 lg:col-span-2 lg:mt-0">
+                    <div class="prose">
+                        <h3 class="">
                             {{ $project->title }}
                         </h3>
                         {!! $project->content !!}

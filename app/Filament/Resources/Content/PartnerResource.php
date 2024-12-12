@@ -31,6 +31,11 @@ class PartnerResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required(),
                 Forms\Components\RichEditor::make('description')
+                    ->disableToolbarButtons([
+                        'attachFiles',
+                        'strike',
+                        'codeBlock'
+                    ])
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('url'),

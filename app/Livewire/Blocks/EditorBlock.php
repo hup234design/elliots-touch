@@ -10,6 +10,11 @@ class EditorBlock extends BaseBlockComponent
     {
         return [
             RichEditor::make('content')
+                ->disableToolbarButtons([
+                    'attachFiles',
+                    'strike',
+                    'codeBlock'
+                ])
                 ->hiddenLabel()
                 ->columnSpanFull(),
         ];

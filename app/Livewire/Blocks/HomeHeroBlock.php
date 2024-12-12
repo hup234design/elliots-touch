@@ -13,7 +13,12 @@ class HomeHeroBlock extends BaseBlockComponent
     {
         return [
             TextInput::make('intro_title'),
-            RichEditor::make('intro_text'),
+            RichEditor::make('intro_text')
+                ->disableToolbarButtons([
+                    'attachFiles',
+                    'strike',
+                    'codeBlock'
+                ]),
         ];
     }
 }

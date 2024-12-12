@@ -38,6 +38,11 @@ class ProjectResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('subtitle'),
                 Forms\Components\RichEditor::make('content')
+                    ->disableToolbarButtons([
+                        'attachFiles',
+                        'strike',
+                        'codeBlock'
+                    ])
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),

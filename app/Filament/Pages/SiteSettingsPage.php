@@ -86,12 +86,22 @@ class SiteSettingsPage extends SettingsPage
                         Tabs\Tab::make('Events Page')
                             ->schema([
                                 TextInput::make('events_page_title'),
-                                RichEditor::make('events_page_introduction'),
+                                RichEditor::make('events_page_introduction')
+                                    ->disableToolbarButtons([
+                                        'attachFiles',
+                                        'strike',
+                                        'codeBlock'
+                                    ]),
                             ]),
                         Tabs\Tab::make('Posts Page')
                             ->schema([
                                 TextInput::make('posts_page_title'),
-                                RichEditor::make('posts_page_introduction'),
+                                RichEditor::make('posts_page_introduction')
+                                    ->disableToolbarButtons([
+                                        'attachFiles',
+                                        'strike',
+                                        'codeBlock'
+                                    ]),
                             ]),
                         Tabs\Tab::make('Navigation')
                             ->schema([

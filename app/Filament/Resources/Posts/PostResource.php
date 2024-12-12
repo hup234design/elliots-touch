@@ -46,6 +46,11 @@ class PostResource extends Resource
                 MediaPicker::make('featured_image')
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
+                    ->disableToolbarButtons([
+                        'attachFiles',
+                        'strike',
+                        'codeBlock'
+                    ])
                     ->columnSpanFull(),
                 Forms\Components\DateTimePicker::make('published_at'),
                 Forms\Components\Toggle::make('is_visible')
