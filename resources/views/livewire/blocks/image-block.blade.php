@@ -1,6 +1,6 @@
 
 <x-blocks.wrapper>
-    @if( $this->data['include_text'] )
+    @if( $this->data['include_text'] ?? false)
         <div
             @class([
                 'flex flex-col gap-12', // Base layout: stacked columns with a gap

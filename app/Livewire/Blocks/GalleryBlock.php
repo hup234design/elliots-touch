@@ -6,6 +6,7 @@ use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Get;
 
@@ -27,8 +28,8 @@ class GalleryBlock extends BaseBlockComponent
                         ->options([
                             'before' => 'Before Gallery',
                             'after' => 'After Gallery',
-                            'left' => 'Left of Gallery',
-                            'right' => 'Right of Gallery'
+                            //'left' => 'Left of Gallery',
+                            //'right' => 'Right of Gallery'
                         ])
                         ->default('right')
                         ->live()
@@ -40,11 +41,21 @@ class GalleryBlock extends BaseBlockComponent
                     RichEditor::make('text')
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'before' ? 2 : 1)
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['before','left'])),
-                    CuratorPicker::make('images')
-                        ->multiple()
-                        ->listDisplay()
+                    Section::make()
+                        ->schema([
+                            CuratorPicker::make('images')
+                                ->multiple()
+                                ->listDisplay()
+
+                        ])
                         ->columnSpan(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['left','right']) ? 1 : 2),
+
                     RichEditor::make('text')
+                        ->disableToolbarButtons([
+                            'attachFiles',
+                            'strike',
+                            'codeBlock'
+                        ])
                         ->columnSpan(fn(Get $get) => $get('text_alignment') == 'after' ? 2 : 1)
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['right','after']))
                 ])

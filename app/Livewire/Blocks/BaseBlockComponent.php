@@ -90,7 +90,7 @@ class BaseBlockComponent extends Component
                 Section::make()
                     ->schema([
                         TextInput::make('header_title')->label('Title')->required(),
-                        Textarea::make('header_text')->label('Text')->columnSpanFull(),
+                        Textarea::make('header_text')->label('Text'),
                         Radio::make('title_alignment')
                             ->label('Title Alignment')
                             ->options([
@@ -100,9 +100,13 @@ class BaseBlockComponent extends Component
                             ])
                             ->default('center')
                             ->inline()
-                            ->required()
+                            ->required(),
+                        Toggle::make('title_headline')
+                            ->inlineLabel()
+                            ->label('Use headline font')
+                            ->default(true),
                     ])
-                    ->columns(2)
+//                    ->columns(2)
                     ->visible(fn(Get $get) => $get('include_header'))
                     ->extraAttributes(['style' => 'background-color: rgb(249, 250, 251);']),
                 Section::make()
@@ -142,6 +146,11 @@ class BaseBlockComponent extends Component
 
     public function render()
     {
+        $this->data['include_header'] = $this->data['include_header'] ?? false;
+        $this->data['header_title'] = $this->data['header_title'] ?? "";
+        $this->data['header_text'] = $this->data['header_text'] ?? "";
+        $this->data['title_alignment'] = $this->data['title_alignment'] ?? "center";
+
         return view('livewire.blocks.' . Str::kebab(class_basename($this)));
     }
 }

@@ -44,9 +44,15 @@
                 "text-center" => (($this->data['title_alignment'] ?? null) == "center"),
                 "text-right" => (($this->data['title_alignment'] ?? null) == "right")
             ])>
-                <div class="prose prose-xl">
+                <div @class([
+                    'prose',
+                    'prose-xl' => ($this->data['title_headline'] ?? true)
+                ])>
                 @if( $this->data['header_title'] ?? null)
-                    <h2 class="font-headline mt-0 mb-0">
+                    <h2 @class([
+                        'mt-0 mb-0',
+                        'font-headline' => ($this->data['title_headline'] ?? true)
+                    ])>
                         {{ $this->data['header_title']  }}
                     </h2>
                 @endif
