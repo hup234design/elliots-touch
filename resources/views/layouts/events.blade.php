@@ -4,7 +4,7 @@
             <div class="flex-1">
                 {{ $slot }}
             </div>
-            <div class="container lg:w-72">
+            <div class=" lg:w-72">
                 <div class="prose max-w-none">
                     @if( $upcomingEvents->count() > 0)
                         <h3 class="font-headline text-et-skyblue">Upcoming Events</h3>
