@@ -7,6 +7,7 @@ use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Model;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
+use Stevebauman\Hypertext\Transformer;
 
 class Page extends Model
 {
@@ -27,14 +28,21 @@ class Page extends Model
 
     public function getDynamicSEOData(): SEOData
     {
+        $seoImageUrl = null;
         if( $this->seo_image ) {
             if ( $media = Media::find($this->seo_image['media_id'] ?? null) ) {
-                return new SEOData(
-                    image: $media->url
-                );
+                $seoImageUrl = $media->url;
             }
         }
-        return new SEOData();
+
+        $title = $this->seo->title
+            ? $this->seo->title . ' | ' . config('app.name')
+            : $this->title . ' | ' . config('app.name');
+
+        return new SEOData(
+            image: $seoImageUrl,
+            title: $title
+        );
     }
 
     public function scopeVisible($query)

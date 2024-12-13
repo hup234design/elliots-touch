@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
+use Stevebauman\Hypertext\Transformer;
 
 class Event extends Model
 {
@@ -32,14 +33,31 @@ class Event extends Model
 
     public function getDynamicSEOData(): SEOData
     {
+        $seoImageUrl = null;
         if( $this->seo_image ) {
             if ( $media = Media::find($this->seo_image['media_id'] ?? null) ) {
-                return new SEOData(
-                    image: $media->url
-                );
+                $seoImageUrl = $media->url;
             }
         }
-        return new SEOData();
+        else if( $this->featured_image ) {
+            if ( $media = Media::find($this->featured_image['media_id'] ?? null) ) {
+                $seoImageUrl = $media->url;
+            }
+        }
+
+        $title = $this->seo->title
+            ? $this->seo->title . ' | ' . config('app.name')
+            : $this->title . ' | ' . config('app.name');
+
+        $description = $this->seo->description
+            ? $this->seo->description
+            : (new Transformer())->toText($this->summary ?? "");
+
+        return new SEOData(
+            image: $seoImageUrl,
+            title: $title,
+            description: $description
+        );
     }
 
     public function category(): BelongsTo

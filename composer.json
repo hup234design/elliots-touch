@@ -19,6 +19,7 @@
         "spatie/eloquent-sortable": "^4.4",
         "spatie/laravel-google-fonts": "^1.4",
         "spatie/laravel-ray": "^1.37",
+        "stevebauman/hypertext": "^1.1",
         "tomatophp/filament-users": "^2.0"
     },
     "require-dev": {
