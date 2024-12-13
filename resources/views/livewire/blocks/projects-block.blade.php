@@ -1,8 +1,14 @@
 <x-blocks.wrapper>
 
-    <div class="space-y-8 sm:space-y-16">
+    <div class="space-y-16 sm:space-y-16">
         @foreach($this->projects as $project)
             <div class="group lg:grid lg:gap-12 lg:grid-cols-3  p-6 -m-6 hover:bg-gray-50">
+                <div>
+                    <div class="prose mb-8 lg:hidden">
+                    <h3 class="">
+                        {{ $project->title }}
+                    </h3>
+                    </div>
                 <div class="relative overflow-hidden h-96 w-full lg:h-full">
                     <div class="lg:aspect-square">
                         <x-media-renderer
@@ -12,9 +18,10 @@
                         />
                     </div>
                 </div>
-                <div class="mt-4 lg:col-span-2 lg:mt-0">
+                </div>
+                <div class="mt-8 lg:col-span-2 lg:mt-0">
                     <div class="prose">
-                        <h3 class="">
+                        <h3 class="hidden lg:block">
                             {{ $project->title }}
                         </h3>
                         {!! $project->content !!}
