@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages\Page;
 use App\Settings\SiteSettings;
+use Awcodes\Curator\Models\Media;
 use Illuminate\Http\Request;
 
 class PageController extends Controller

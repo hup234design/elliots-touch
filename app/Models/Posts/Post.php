@@ -3,10 +3,12 @@
 namespace App\Models\Posts;
 
 use App\Concerns\HasMediables;
+use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class Post extends Model
 {
@@ -25,6 +27,18 @@ class Post extends Model
             'published_at' => 'datetime',
             'seo_image' => 'array',
         ];
+    }
+
+    public function getDynamicSEOData(): SEOData
+    {
+        if( $this->seo_image ) {
+            if ( $media = Media::find($this->seo_image['media_id'] ?? null) ) {
+                return new SEOData(
+                    image: $media->url
+                );
+            }
+        }
+        return new SEOData();
     }
 
     public function category(): BelongsTo

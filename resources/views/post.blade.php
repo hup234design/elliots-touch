@@ -1,4 +1,9 @@
 <x-posts-layout>
+
+    @section('seo')
+        {!! seo()->for($post) !!}
+    @endsection
+
     @section('title', $settings->posts_page_title)
         <div class="prose max-w-none">
             <h1>{{ $post->title }}</h1>

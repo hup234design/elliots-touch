@@ -101,6 +101,7 @@
         x-transition:leave-start="opacity-100 transform scale-100"
         x-transition:leave-end="opacity-0 transform scale-95"
         class="absolute top-0 left-0 w-full bg-et-skyblue shadow-md z-50"
+        x-cloak
     >
         <nav class="flex flex-col space-y-4 p-4">
             <ul class="flex flex-col justify-between items-center text-center gap-4">

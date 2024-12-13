@@ -1,5 +1,9 @@
 <x-app-layout>
 
+    @section('seo')
+        {!! seo()->for($page) !!}
+    @endsection
+
     @section('title', $page->title)
 
     <div class="container">

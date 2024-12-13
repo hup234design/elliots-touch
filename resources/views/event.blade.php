@@ -1,4 +1,9 @@
 <x-events-layout>
+
+    @section('seo')
+        {!! seo()->for($event) !!}
+    @endsection
+
     @section('title', $settings->events_page_title)
         <div class="prose max-w-none">
             <h1>{{ $event->title }}</h1>
@@ -11,4 +16,5 @@
     <div class="mt-8">
         <x-blocks :blocks="$event->content ?? []" />
     </div>
+
 </x-events-layout>

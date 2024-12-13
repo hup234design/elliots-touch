@@ -1,5 +1,9 @@
 <x-app-layout>
 
+    @section('seo')
+        {!! seo()->for($page) !!}
+    @endsection
+
     @section('heading')
 
         <div class="bg-et-skyblue py-6">
