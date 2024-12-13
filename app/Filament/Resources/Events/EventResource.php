@@ -5,15 +5,24 @@ namespace App\Filament\Resources\Events;
 use App\Filament\Forms\Components\MediaPicker;
 use App\Filament\Resources\Events\EventResource\Pages;
 use App\Filament\Resources\Events\EventResource\RelationManagers;
+use App\Livewire\Blocks\EditorBlock;
+use App\Livewire\Blocks\GalleryBlock;
+use App\Livewire\Blocks\ImageBlock;
+use App\Livewire\Blocks\LatestPostsBlock;
+use App\Livewire\Blocks\TwoColumnsBlock;
+use App\Livewire\Blocks\VideoBlock;
 use App\Models\Events\Event;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use RalphJSmit\Filament\SEO\SEO;
 
 class EventResource extends Resource
 {
@@ -34,28 +43,89 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('event_category_id')
-                    ->numeric(),
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\TextInput::make('slug')
-                    ->required(),
-                Forms\Components\Textarea::make('summary')
-                    ->columnSpanFull(),
-                Forms\Components\RichEditor::make('content')
-                    ->disableToolbarButtons([
-                        'attachFiles',
-                        'strike',
-                        'codeBlock'
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->maxLength(255)
+                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+
+                        Forms\Components\TextInput::make('slug')
+                            ->disabled()
+                            ->dehydrated()
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(Event::class, 'slug', ignoreRecord: true),
+
+                        Forms\Components\Textarea::make('summary')
+                            ->columnSpanFull(),
+
+                        \Filament\Forms\Components\Builder::make('content')
+                            ->hiddenLabel()
+                            ->blockNumbers(false)
+                            ->collapsible()
+                            ->blocks(fn(Get $get) => [
+                                EditorBlock::schema(),
+                                TwoColumnsBlock::schema(),
+                                ImageBlock::schema(),
+                                GalleryBlock::schema(),
+                                VideoBlock::schema(),
+                                LatestPostsBlock::schema(),
+                            ])
+                            ->columnSpanFull(),
+                ])
+                    ->columns(2),
+
+                Forms\Components\Section::make('Featured Image')
+                    ->schema([
+                        MediaPicker::make('featured_image')
+                            ->columnSpanFull()
+                            ->hiddenLabel(),
                     ])
-                    ->columnSpanFull(),
-                MediaPicker::make('featured_image')
-                    ->columnSpanFull(),
-                Forms\Components\DatePicker::make('date'),
-                Forms\Components\TextInput::make('start_time'),
-                Forms\Components\TextInput::make('end_time'),
-                Forms\Components\Toggle::make('is_visible')
-                    ->required(),
+                    ->collapsible(),
+
+                Forms\Components\Section::make()
+                    ->schema([
+                        Forms\Components\Select::make('event_category_id')
+                            ->relationship('category', 'name')
+                            ->searchable()
+                            ->columnSpan(3),
+
+                        Forms\Components\Select::make('is_visible')
+                            ->options([
+                                1 => 'Yes',
+                                0 => 'No'
+                            ])
+                            ->default(1)
+                            ->label('Is Visible?')
+                            ->columnSpan(3),
+
+                        Forms\Components\DatePicker::make('date')
+                            ->label('Date')
+                            ->columnSpan(2),
+
+                        Forms\Components\TimePicker::make('start_time')
+                            ->seconds(false)
+                            ->label('Start Time')
+                            ->columnSpan(2),
+
+                        Forms\Components\TimePicker::make('end_time')
+                            ->seconds(false)
+                            ->label('End Time')
+                            ->columnSpan(2),
+                    ])
+                    ->columns(6),
+
+                Forms\Components\Section::make('SEO')
+                    ->schema([
+                        SEO::make(['title','description']),
+                        MediaPicker::make('seo_image'),
+                    ])
+                    ->collapsible()
+                    ->columns(2)
+                    ->hiddenOn('create'),
+
             ]);
     }
 
