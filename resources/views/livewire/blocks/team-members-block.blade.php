@@ -8,10 +8,10 @@
                 @foreach($this->teamMembers as $teamMember)
                     <div class="group space-y-4 lg:flex lg:gap-6 lg:space-y-0">
                         <div class="flex-none lg:w-2/5 overflow-hidden">
-                        <div class="aspect-square rounded-full overflow-hidden">
+                        <div class="aspect-square overflow-hidden lg:rounded-full ">
                             <x-media-renderer
                                 :data="$teamMember->profile_image"
-                                class="object-cover object-center w-full h-full rounded-full transition duration-300 ease-in-out group-hover:scale-105"
+                                class="object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-105 lg:rounded-full"
                             />
                         </div>
                         </div>
