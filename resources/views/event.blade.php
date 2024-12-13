@@ -6,6 +6,9 @@
             @if( $event->featured_image)
                 <x-media-renderer :data="$event->featured_image" class="w-full"/>
             @endif
-            {!! $event->content !!}
         </div>
+
+    <div class="mt-8">
+        <x-blocks :blocks="$event->content ?? []" />
+    </div>
 </x-events-layout>
