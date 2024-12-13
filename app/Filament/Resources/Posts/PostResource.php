@@ -180,8 +180,9 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('published_at')
                     ->date()
                     ->sortable(),
-                Tables\Columns\ToggleColumn::make('is_visible')
-                    ->label('Is Visible?'),
+                Tables\Columns\IconColumn::make('is_visible')
+                    ->label('Is Visible?')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
