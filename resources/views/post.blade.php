@@ -6,6 +6,9 @@
             @if( $post->featured_image)
                 <x-media-renderer :data="$post->featured_image" class="w-full"/>
             @endif
-            {!! $post->content !!}
         </div>
+
+    <div class="mt-8">
+        <x-blocks :blocks="$post->content ?? []" />
+    </div>
 </x-posts-layout>

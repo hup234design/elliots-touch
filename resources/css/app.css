@@ -4,6 +4,9 @@
 .container {
     @apply max-w-6xl mx-auto px-6 lg:px-8;
 }
+.container .container {
+    @apply w-full px-0 lg:px-0;
+}
 .font-headline {
     @apply font-black text-et-navy tracking-wide;
 }

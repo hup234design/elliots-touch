@@ -6,10 +6,12 @@ use App\Concerns\HasMediables;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Post extends Model
 {
-    use HasMediables;
+//    use HasMediables;
+    use HasSEO;
 
     protected $guarded = [];
 
@@ -21,6 +23,7 @@ class Post extends Model
             'header_image' => 'array',
             'is_visible' => 'boolean',
             'published_at' => 'datetime',
+            'seo_image' => 'array',
         ];
     }
 

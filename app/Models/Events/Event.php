@@ -7,10 +7,12 @@ use App\Models\Posts\PostCategory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Event extends Model
 {
     use HasMediables;
+    use HasSEO;
 
     protected $guarded = [];
 
@@ -22,6 +24,7 @@ class Event extends Model
             'header_image' => 'array',
             'is_visible' => 'boolean',
             'date' => 'datetime',
+            'seo_image' => 'array',
         ];
     }
 
