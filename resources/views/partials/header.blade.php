@@ -1,7 +1,7 @@
 <header x-data="{ mobileMenuOpen: false }">
     <div class="mt-4 container flex justify-between items-center">
         <div class="hidden md:flex-1 md:flex gap-4">
-            <img class="h-16 border border-gray-700 rounded-2xl" src="https://static.wixstatic.com/media/c40bcd_3712faee93c14887ad6044bd95cfdad5~mv2.jpg/v1/fill/w_980,h_460,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c40bcd_3712faee93c14887ad6044bd95cfdad5~mv2.jpg">
+            <img class="h-16 border-2 border-et-skyblue rounded-2xl" src="https://static.wixstatic.com/media/c40bcd_3712faee93c14887ad6044bd95cfdad5~mv2.jpg/v1/fill/w_980,h_460,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c40bcd_3712faee93c14887ad6044bd95cfdad5~mv2.jpg">
             {{--                <a href="https://www.facebook.com/pages/Elliots-Touch/710984529027805" target="_blank">--}}
             {{--                    <svg class="w-8 h-8 text-et-skyblue hover:text-et-dark-crimson" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg>                </a>--}}
 
@@ -16,7 +16,7 @@
             </a>
         </div>
         <div class="hidden text-right md:block md:flex-1">
-            <div class="flex justify-end mb-6 gap-4">
+            <div class="flex justify-end mb-2 gap-4">
                 @if( $settings->social_facebook )
                     <a href="{{ $settings->social_facebook }}" target="_blank">
                         <svg class="w-6 h-6 text-et-skyblue hover:text-et-dark-crimson" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg>
