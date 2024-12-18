@@ -103,6 +103,7 @@ class EventResource extends Resource
 
                         Forms\Components\DatePicker::make('date')
                             ->label('Date')
+                            ->required()
                             ->columnSpan(2),
 
                         Forms\Components\TimePicker::make('start_time')

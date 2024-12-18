@@ -110,6 +110,7 @@ class PostResource extends Resource
 
                         Forms\Components\DatePicker::make('published_at')
                             ->label('Published Date')
+                            ->required()
                             ->columnStart(1),
 
                         Forms\Components\Select::make('is_visible')
