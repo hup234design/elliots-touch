@@ -1,11 +1,11 @@
 <!-- Footer Section: With Links Info Newsletter -->
 
 <!-- Footer Section: Simple Vertical with Social -->
-<footer id="page-footer" class="bg-gray-50 dark:bg-gray-900 dark:text-gray-100 py-16">
+<footer id="page-footer" class="bg-gray-50 dark:bg-gray-900 dark:text-gray-100 py-12">
     <div
         class="container text-center"
     >
-        <div class="space-y-10">
+        <div class="space-y-4">
             <nav class="space-x-4">
                 @if( $settings->social_facebook )
                 <a
@@ -75,16 +75,14 @@
                 @endforeach
             </nav>
 
-
-
-            <div x-data="{}" class="mt-12">
+            <div x-data="{}" class="py-4">
                 <a type="button" @click="$dispatch('open-modal', {id: 'mailchimp-signup'})" class=" rounded-xl font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-et-skyblue hover:bg-et-skyblue-700 focus-visible:outline-et-skyblue-700 px-5 py-2.5 text-md hover:cursor-pointer">
                     <span class="whitespace-nowrap">Subscribe to our Newsletter</span>
                 </a>
             </div>
 
-        </div>
-        <hr class="my-10 border-dashed border-gray-200 dark:border-gray-700/75" />
+{{--        </div>--}}
+{{--        <hr class="my-10 border-dashed border-gray-200 dark:border-gray-700/75" />--}}
         <div class="text-gray-500 dark:text-gray-400/75">
             <span class="font-medium">
                 © {{ Carbon\Carbon::now()->format('Y') }} {{ config('app.name') }}
@@ -95,17 +93,20 @@
                 Charity Number: 1094446
             </span>
         </div>
-    </div>
+{{--    </div>--}}
 </footer>
 <!-- END Footer Section: Simple Vertical with Social -->
 
 
 
-<x-filament::modal width="4xl"  id="mailchimp-signup">
+<x-filament::modal width="3xl"  id="mailchimp-signup">
     <x-slot name="heading">
-        Subscribe to our newsletter
+        Newsletter Signup
     </x-slot>
     <div>
+        <div class="max-w-2xl">
+        <p>Sign up to our newsletter to receive regular updates about our news, events and fundraising campaigns</p>
+        </div>
         <x-mailchimp-signup />
     </div>
 </x-filament::modal>

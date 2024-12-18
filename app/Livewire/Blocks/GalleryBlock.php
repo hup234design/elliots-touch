@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Blocks;
 
+//use App\Filament\Forms\Components\GalleryBlockLayout;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Radio;
@@ -43,6 +44,8 @@ class GalleryBlock extends BaseBlockComponent
                         ->visible(fn(Get $get) => $get('include_text') && in_array($get('text_alignment'), ['before','left'])),
                     Section::make()
                         ->schema([
+//                            GalleryBlockLayout::make('gallery_layout')
+//                                ->live(),
                             CuratorPicker::make('images')
                                 ->multiple()
                                 ->listDisplay()
