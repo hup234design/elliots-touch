@@ -17,6 +17,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
 
@@ -42,7 +43,9 @@ class SiteSettingsPage extends SettingsPage
                     ->tabs([
                         Tabs\Tab::make('General')
                             ->schema([
-                                // ...
+                                TextInput::make('site_name')
+                                    ->required(),
+                                Toggle::make('site_active'),
                             ]),
 //                        Tabs\Tab::make('Home Page')
 //                            ->schema([

@@ -5,6 +5,7 @@ namespace App\Models\Posts;
 use App\Concerns\HasMediables;
 use Awcodes\Curator\Models\Media;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
@@ -72,5 +73,15 @@ class Post extends Model
     public function scopePublished($query)
     {
         return $query->where('published_at', '<=', Carbon::now()->format('Y-m-d H:i:s'));
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Order by published_at DESC
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('published_at', 'desc');
+        });
     }
 }

@@ -25,6 +25,8 @@ class SiteSettings extends Settings
     public ?string $social_linkedin;
     public ?string $social_twitter;
     public ?string $social_bluesky;
+    public ?string $site_name;
+    public ?bool   $site_active;
 
     public static function group(): string
     {
