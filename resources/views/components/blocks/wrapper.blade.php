@@ -46,7 +46,7 @@
             ])>
                 <div @class([
                     'prose',
-                    'prose-xl' => ($this->data['title_headline'] ?? true)
+                    'md:prose-xl' => ($this->data['title_headline'] ?? true)
                 ])>
                 @if( $this->data['header_title'] ?? null)
                     <h2 @class([
