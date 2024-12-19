@@ -39,7 +39,7 @@
     @if( $this->data['include_header'] ?? false )
 
             <div @class([
-                "container mb-12",
+                "container mb-6 md:mb-12",
                 "text-left" => (($this->data['title_alignment'] ?? null) == "left"),
                 "text-center" => (($this->data['title_alignment'] ?? null) == "center"),
                 "text-right" => (($this->data['title_alignment'] ?? null) == "right")
