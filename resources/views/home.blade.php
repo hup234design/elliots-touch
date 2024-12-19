@@ -6,11 +6,18 @@
 
     @section('heading')
 
-        <div class="bg-et-skyblue py-6">
+        <div class="md:hidden">
+            <x-media-renderer
+                :data="['media_id' => 7]"
+                class="w-full"
+            />
+        </div>
+
+        <div class="hidden md:block bg-et-skyblue py-6">
 
             <div class="container">
-                <div class="relative h-96">
-                    <div class="hidden absolute left-0 w-1/4 h-full lg:block">
+                <div class="relative md:h-96">
+                    <div class="hidden absolute left-0 w-1/4 h-full md:block">
                         <div class="w-full h-full flex flex-col items-center justify-center">
                             <div class="w-full aspect-square rounded-full overflow-hidden">
 
@@ -24,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hidden absolute right-0 w-1/4 h-full lg:block">
+                    <div class="hidden absolute right-0 w-1/4 h-full md:block">
                         <div class="w-full h-full flex flex-col items-center justify-center">
                             <div class="w-full aspect-square rounded-full overflow-hidden">
                                 <x-media-renderer
@@ -36,10 +43,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative mx-auto h-full bg-gray-100 lg:w-[60%] lg:rounded-full">
+                    <div class="relative mx-auto h-full bg-gray-100 md:w-[60%] md:rounded-full">
                         <x-media-renderer
                             :data="['media_id' => 7]"
-                            class="h-full w-full object-cover object-center   lg:rounded-full"
+                            class="h-full w-full object-cover object-center   md:rounded-full"
                         />
 {{--                        <img src="https://elliotstouch.hup234design.com/storage/media/elliot.jpg" class="h-full w-full object-cover object-center   rounded-full">--}}
 

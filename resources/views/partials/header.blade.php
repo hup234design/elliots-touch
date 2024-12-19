@@ -31,18 +31,18 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="">
                 <a href="{{ url('/') }}" target="_blank" class="md:text-center">
-                    <img src="{{ asset('images/logo-transparent.png') }}" alt="Logo" class="md:mx-auto max-h-16 w-auto md:max-h-auto md:h-20">
+                    <img src="{{ asset('images/logo-transparent.png') }}" alt="Logo" class="md:mx-auto w-3/4 h-auto md:w-auto md:h-16">
                 </a>
             </div>
             <!-- Menu Button -->
             <div class="absolute top-0 right-0 h-full flex flex-col justify-center md:hidden">
                 <button
                     @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="text-et-blue focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    class="text-et-skyblue focus:outline-none focus:ring-2 focus:ring-gray-500"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-current"  viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 fill-current"  viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
                 </button>
             </div>
             <!-- Menu Button END -->
