@@ -37,14 +37,19 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\TextInput::make('subtitle'),
+                Forms\Components\Textarea::make('excerpt')
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
                     ->disableToolbarButtons([
                         'attachFiles',
                         'strike',
                         'codeBlock'
                     ])
+                    ->required()
                     ->columnSpanFull(),
                 MediaPicker::make('featured_image')
+                    ->required()
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('is_visible')
                     ->required(),
