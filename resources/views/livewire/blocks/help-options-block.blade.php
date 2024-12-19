@@ -1,27 +1,26 @@
 <x-blocks.wrapper>
 
-    <div class="space-y-8 sm:space-y-16">
-        @foreach($this->options as $option)
-            <div class="group p-6 -m-6 lg:grid lg:gap-12 lg:grid-cols-3 hover:bg-gray-50">
-                <div class="relative overflow-hidden h-96 w-full lg:h-full bg-red-900">
-                    <div class="absolute inset-0">
+        <div class="space-y-16">
+        @foreach ($this->options->chunk(2) as $batch)
+        <div class="grid md:grid-cols-2 gap-12">
+        @foreach($batch as $option)
+            <div class="group prose p-6 -m-6 flex flex-col hover:bg-gray-50">
+                <h3 class="">
+                    {{ $option->title }}
+                </h3>
+                <div class="relative overflow-hidden aspect-video">
                     <x-media-renderer
                         :data="$option->featured_image"
-                        class="h-full w-full object-cover object-center group-hover:scale-105"
+                        class="mt-0 h-full w-full object-cover object-center group-hover:scale-105"
                         alt="Featured Image of event"
                     />
-                    </div>
                 </div>
-                <div class="lg:col-span-2 lg:py-4">
-                    <div class="prose min-h-64 flex flex-col justify-center">
-                        <h3 class="">
-                            {{ $option->title }}
-                        </h3>
                         {!! $option->content !!}
-                    </div>
-                </div>
             </div>
         @endforeach
+        </div>
+        @endforeach
+        </div>
     </div>
 
 </x-blocks.wrapper>
