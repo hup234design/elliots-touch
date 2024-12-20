@@ -11,21 +11,25 @@ class PageController extends Controller
 {
     public function home()
     {
-        if (auth()->check()) {
-            $page = Page::where('is_home', true)->firstOrFail();
-            return view('home', ['page' => $page]);
-        } else {
-            return view('archive.home');
-        }
+//        if (auth()->check()) {
+//            $page = Page::where('is_home', true)->firstOrFail();
+//            return view('home', ['page' => $page]);
+//        } else {
+//            return view('archive.home');
+//        }
+        $page = Page::where('is_home', true)->firstOrFail();
+        return view('home', ['page' => $page]);
     }
 
     public function page($slug)
     {
-        if (auth()->check()) {
-            $page = Page::where('slug', $slug)->firstOrFail();
-            return view('page', ['page' => $page]);
-        } else {
-            return view('archive.' . $slug);
-        }
+//        if (auth()->check()) {
+//            $page = Page::where('slug', $slug)->firstOrFail();
+//            return view('page', ['page' => $page]);
+//        } else {
+//            return view('archive.' . $slug);
+//        }
+        $page = Page::where('slug', $slug)->firstOrFail();
+        return view('page', ['page' => $page]);
     }
 }
