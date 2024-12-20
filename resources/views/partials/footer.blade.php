@@ -93,6 +93,11 @@
                 Charity Number: 1094446
             </span>
         </div>
+        <div class="text-gray-500 dark:text-gray-400/75">
+            <span class="font-medium">
+                Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;" class="cursor-pointer hover:underline hover:text-et-skyblue" title="Contact HUP234 Design">HUP234 Design</a>
+            </span>
+        </div>
 {{--    </div>--}}
 </footer>
 <!-- END Footer Section: Simple Vertical with Social -->
