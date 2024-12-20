@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="">
-                <a href="{{ url('/') }}" target="_blank" class="md:text-center">
+                <a href="{{ url('/') }}" target="_blank" class="block md:mx-auto md:text-center">
                     <img src="{{ asset('images/logo-transparent.png') }}" alt="Logo" class="md:mx-auto w-3/4 h-auto md:w-auto md:h-16">
                 </a>
             </div>
