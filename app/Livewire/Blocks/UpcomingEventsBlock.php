@@ -11,6 +11,6 @@ class UpcomingEventsBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->events = Event::take(3)->get();
+        $this->events = Event::upcoming()->visible()->orderBy('date', 'asc')->take(3)->get();
     }
 }

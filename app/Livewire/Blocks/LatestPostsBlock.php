@@ -11,6 +11,6 @@ class LatestPostsBlock extends BaseBlockComponent
     public function mount($data)
     {
         $this->data = $data;
-        $this->posts = Post::take(3)->get();
+        $this->posts = Post::published()->visible()->orderBy('published_at', 'asc')->take(3)->get();
     }
 }
