@@ -1,5 +1,5 @@
 <x-blocks.wrapper>
-    <div class="bg-white dark:bg-gray-900 dark:text-gray-100">
+    <div class="bg-white">
         <div
             class=""
         >
@@ -16,19 +16,15 @@
                         </div>
                         </div>
                         <div class="prose">
-                            {{--                        <h4 class="mb-0.5 text-xl font-bold">--}}
                             <h3 class="mt-0">
                                 {{ $teamMember->name }}
                             </h3>
-                            {{--                        <p class="mb-3 font-medium text-gray-600 dark:text-gray-400">--}}
                             <p class="mt-0 font-semibold text-et-navy">
                                 {{ $teamMember->role }}
                             </p>
-                            {{--                        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">--}}
                             <p>
                                 {{ nl2br($teamMember->bio) }}
                             </p>
-                            {{--                        </p>--}}
                         </div>
                     </div>
                 @endforeach

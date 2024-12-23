@@ -4,7 +4,7 @@
 
         @foreach( $this->ideas as $idea )
         <div
-            class="group flex flex-col overflow-hidden rounded-lg bg-white dark:bg-gray-800 dark:text-gray-100"
+            class="group flex flex-col overflow-hidden rounded-lg bg-white"
         >
             <div class="w-full grow p-5 text-center lg:p-6">
                 <div class="-mx-2.5 -mt-2.5 mb-5 overflow-hidden rounded-md">
