@@ -1,7 +1,7 @@
 <!-- Footer Section: With Links Info Newsletter -->
 
 <!-- Footer Section: Simple Vertical with Social -->
-<footer id="page-footer" class="bg-gray-50 dark:bg-gray-900 dark:text-gray-100 py-12">
+<footer id="page-footer" class="bg-gray-50 py-12">
     <div
         class="container text-center"
     >
@@ -26,7 +26,7 @@
                     @if( $settings->social_twitter )
                 <a
                     href="{{ $settings->social_twitter }}" target="_blank"
-                    class="text-gray-400 hover:text-gray-800 dark:hover:text-white"
+                    class="text-gray-400 hover:text-gray-800"
                 >
                     <svg
                         class="bi bi-twitter-x inline-block size-5"
@@ -67,7 +67,7 @@
                 @foreach( $footerMenu ?? [] as $menuItem)
                     @if( $menuItem['route'])
                             <a
-                                class="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50"
+                                class="font-medium text-gray-700 hover:text-gray-950"
                                 href="{{ route($menuItem['route'], $menuItem['slug']) }}">
                                 {{ $menuItem['title'] }}
                             </a>
@@ -82,18 +82,17 @@
             </div>
 
 {{--        </div>--}}
-{{--        <hr class="my-10 border-dashed border-gray-200 dark:border-gray-700/75" />--}}
-        <div class="text-gray-500 dark:text-gray-400/75">
+        <div class="text-gray-500">
             <span class="font-medium">
                 © {{ Carbon\Carbon::now()->format('Y') }} {{ config('app.name') }}
             </span>
         </div>
-        <div class="text-gray-500 dark:text-gray-400/75">
+        <div class="text-gray-500">
             <span class="font-medium">
                 Charity Number: 1094446
             </span>
         </div>
-        <div class="text-gray-500 dark:text-gray-400/75">
+        <div class="text-gray-500">
             <span class="font-medium">
                 Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;" class="cursor-pointer hover:underline hover:text-et-skyblue" title="Contact HUP234 Design">HUP234 Design</a>
             </span>

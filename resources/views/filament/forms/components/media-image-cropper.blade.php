@@ -82,7 +82,7 @@ $crops = $getCrops();
                 >
             </div>
         </div>
-        <div class="w-full h-64 lg:h-full lg:w-48 overflow-auto bg-gray-50 dark:bg-gray-950/30 flex flex-col shadow-top lg:shadow-none z-[1]">
+        <div class="w-full h-64 lg:h-full lg:w-48 overflow-auto bg-gray-50 flex flex-col shadow-top lg:shadow-none z-[1]">
             <div class="flex items-center w-full">
                 <div class="flex-1 overflow-hidden">
                     <div class="flex flex-col w-full h-full overflow-y-auto">

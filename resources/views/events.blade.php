@@ -9,7 +9,7 @@
                 <div class="group">
 
                     <div
-                        class="flex flex-col overflow-hidden rounded-lg bg-gray-50 shadow-sm md:flex-row dark:bg-gray-800"
+                        class="flex flex-col overflow-hidden rounded-lg bg-gray-50 shadow-sm md:flex-row"
                     >
                         <div
                             class="block w-full aspect-video overflow-hidden lg:w-2/5 xl:w-1/3 bg-red-100 md:min-h-64 md:aspect-none"
@@ -33,7 +33,7 @@
                                         {{ $event->title }}
                                     </a>
                                 </h3>
-                                <p class="mb-3 text-sm text-gray-600 dark:text-gray-400">
+                                <p class="mb-3 text-sm text-gray-600">
                                     <span class="font-medium">
                                         {{ format_carbon_date($event->date) }}
                                     </span>
