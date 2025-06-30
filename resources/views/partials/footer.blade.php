@@ -92,9 +92,16 @@
                 Charity Number: 1094446
             </span>
         </div>
+
+            <div>
+                <a href="https://www.somersetcf.org.uk" target="_blank" title="Somerset Community Foundation">
+                    <img src="{{ asset('images/somerset-community-foundation.png') }}" alt="Somerset Community Foundation Logo" class="mx-auto w-1/3 h-auto md:w-auto md:h-20">
+                </a>
+            </div>
+
         <div class="text-gray-500">
-            <span class="font-medium">
-                Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;" class="cursor-pointer hover:underline hover:text-et-skyblue" title="Contact HUP234 Design">HUP234 Design</a>
+            <span class="font-medium text-xs">
+                Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;" class="cursor-pointer hover:underline hover:text-et-skyblue " title="Contact HUP234 Design">HUP234 Design</a>
             </span>
         </div>
 {{--    </div>--}}
