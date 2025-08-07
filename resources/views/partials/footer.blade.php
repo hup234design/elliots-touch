@@ -87,11 +87,13 @@
                 © {{ Carbon\Carbon::now()->format('Y') }} {{ config('app.name') }}
             </span>
         </div>
+        {{-- @if( $settings->charity_number )
         <div class="text-gray-500">
             <span class="font-medium">
-                Charity Number: 1094446
+                Charity Number: {{ $settings->charity_number }}
             </span>
         </div>
+        @endif --}}
 
             <div>
                 <a href="https://www.somersetcf.org.uk" target="_blank" title="Somerset Community Foundation">
