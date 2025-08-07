@@ -30,6 +30,7 @@ class SiteSettings extends Settings
     public ?string $charity_name;
     public ?string $charity_url;
     public ?int $charity_logo;
+    public ?string $charity_text;
 
     public static function group(): string
     {

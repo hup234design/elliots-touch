@@ -61,36 +61,44 @@
                 </a>
             </div>
 
+            <div class="flex flex-col items-center space-y-2">
+                @if ($settings->charity_text)
+                    <div class="text-gray-500 text-sm">
+                        <span class="font-medium">
+                            {!! nl2br($settings->charity_text) !!}
+                        </span>
+                    </div>
+                @endif
+
+                @if ($settings->charity_logo && $settings->charity_name && $settings->charity_url)
+                    <div class="mt-2">
+                        <a class="cursor-pointer" href="{{ $settings->charity_url }}" target="_blank"
+                            title="{{ $settings->charity_name }}">
+                            <x-curator-glider class="mx-auto w-1/3 h-auto md:w-auto md:h-16" :media="$settings->charity_logo" />
+                        </a>
+                    </div>
+                @endif
+            </div>
+
+        </div>
+
+
+        <div class="mt-8 space-y-2">
             {{--        </div> --}}
             <div class="text-gray-500">
-                <span class="font-medium">
+                <span class=" text-sm font-medium">
                     © {{ Carbon\Carbon::now()->format('Y') }} {{ config('app.name') }}
                 </span>
             </div>
-            {{-- @if ($settings->charity_number)
-        <div class="text-gray-500">
-            <span class="font-medium">
-                Charity Number: {{ $settings->charity_number }}
-            </span>
-        </div>
-        @endif --}}
 
-            @if ($settings->charity_logo && $settings->charity_name && $settings->charity_url)
-                <div>
-                    <a class="cursor-pointer" href="{{ $settings->charity_url }}" target="_blank" title="{{ $settings->charity_name }}">
-                        <x-curator-glider class="mx-auto w-1/3 h-auto md:w-auto md:h-20" :media="$settings->charity_logo" />
-                    </a>
-                </div>
-            @endif
-
-                <div class="text-gray-500">
-                    <span class="font-medium text-xs">
-                        Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;"
-                            class="cursor-pointer hover:underline hover:text-et-skyblue "
-                            title="Contact HUP234 Design">HUP234 Design</a>
-                    </span>
-                </div>
-                {{--    </div> --}}
+            <div class="text-gray-500">
+                <span class="font-medium text-xs">
+                    Site by <a href="mailto&#58;su%7&#48;po%72t&#64;&#104;u%7&#48;234%64esign&#46;co&#46;u&#107;"
+                        class="cursor-pointer hover:underline hover:text-et-skyblue "
+                        title="Contact HUP234 Design">HUP234 Design</a>
+                </span>
+            </div>
+            {{--    </div> --}}
 </footer>
 <!-- END Footer Section: Simple Vertical with Social -->
 

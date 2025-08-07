@@ -16,6 +16,7 @@ use Filament\Forms\Components\Group;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
@@ -56,6 +57,8 @@ class SiteSettingsPage extends SettingsPage
                                     ->required(),
                                 CuratorPicker::make('charity_logo')
                                     ->label('Charity Logo')
+                                    ->required(),
+                                Textarea::make('charity_text')
                                     ->required(),
                             ]),
 //                        Tabs\Tab::make('Home Page')
