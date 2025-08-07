@@ -47,6 +47,17 @@ class SiteSettingsPage extends SettingsPage
                                     ->required(),
                                 Toggle::make('site_active'),
                             ]),
+                        Tabs\Tab::make('Charity')
+                            ->schema([
+                                TextInput::make('charity_name')
+                                    ->required(),
+                                TextInput::make('charity_url')
+                                    ->url()
+                                    ->required(),
+                                CuratorPicker::make('charity_logo')
+                                    ->label('Charity Logo')
+                                    ->required(),
+                            ]),
 //                        Tabs\Tab::make('Home Page')
 //                            ->schema([
 //                                Group::make()
